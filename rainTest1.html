@@ -1,0 +1,167 @@
+<!doctype html><!--声明文档类型:html-->
+<html><!--超文本标记语言  根目录节点标签-->
+	<head><!--头部:非可视化标签-->
+		<meta charset="utf-8"><!--字符编码:国际编码-->
+		<title>雨滴</title>
+		<meta name="description" content="描述:对网页文档的大概的介绍">
+		<!--关键词:提供给搜索引擎搜索网站使用-->
+		<meta name="keywords" content="关键词1,关键词2">
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			canvas{
+				/*width:500px;
+				height:500px;*/
+				display:block;
+				background:#000;
+				/*
+					canvas默认的宽高是300*150
+					500/300 = 1.6667
+					500/150 = 3.333
+				*/
+			}
+		</style>
+	</head>
+	<body><!--身体 可视化标签-->
+		<canvas id="canvas">您的浏览器不支持画布，请您更换浏览器!!</canvas>
+		<script type="text/javascript">
+			var can = document.getElementById("canvas");
+			//设置画布的绘图环境
+			var cxt = can.getContext("2d");
+			//设置画布的宽高
+			var w = can.width = window.innerWidth;
+			var h = can.height = window.innerHeight;
+			window.onresize = function(){
+				w = can.width = window.innerWidth;
+				h = can.height = window.innerHeight;
+			}
+			/*//绘制一个矩形 xy坐标 wh宽高
+			//cxt.rect(50,50,100,100);//规定矩形的路径
+			cxt.fillStyle = "red";//设置填充方法的颜色
+			//cxt.fill();//填充方法绘制一个实心的矩形
+			//cxt.fillRect(50,50,100,100);
+			//绘制一个圆形
+			//xy圆心坐标  r半径 绘制整圆 顺时针/逆时针
+			cxt.arc(250,250,50,0,Math.PI*2,false);
+			cxt.fill();
+			//设置触笔方法的颜色
+			cxt.strokeStyle = "#fff";
+			cxt.stroke();//触笔方法绘制空心圆
+
+			var y = 0;
+			setInterval(function(){
+				y+=2;
+				//先清空画布
+				cxt.clearRect(0,0,w,h);
+				cxt.fillRect(50,y,100,100);
+			},30)*/
+			/*
+				面向过程
+				面向对象
+			*/
+			//创建一个雨滴对象（女娲造人）
+			function Drop(){}//代表人类(概念)
+			//添加原型(给人添加属性)
+			Drop.prototype = {
+				//初始化功能
+				init : function(){
+					//初始化x y 坐标
+					this.x = random(0,w);
+					this.y = 0;
+					this.vy = random(4,5);//y坐标改变的速度
+					//console.log(this)谁用指代谁
+					this.l = random(0.8*h,0.9*h);//下落的高度
+					this.r = 1;//初始半径
+					this.vr = 1;//半径增大的速度
+					this.a = 1;//初始透明度
+					this.va = 0.96;//透明度改衰减系数
+				},
+				draw : function(){
+					if (this.y > this.l)
+					{
+						//绘制圆形
+						cxt.beginPath();//开始路径
+						cxt.strokeStyle = "rgba(0,255,255,"+this.a+")";
+						cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+						cxt.stroke();
+					}else{
+						cxt.fillStyle = "#0ff";
+						cxt.fillRect(this.x,this.y,2,10);
+					}
+					//更新坐标
+					this.update();
+				},
+				//y坐标更新的过程
+				update : function(){
+					//雨滴下落
+					if (this.y < this.l)
+					{
+						this.y += this.vy;
+					}else{//半径增大
+						/*if (this.r < 50)
+						{
+							this.r += this.vr;
+						}*/
+						if (this.a > 0.03)
+						{
+							this.r += this.vr;
+							if (this.r > 50)
+							{
+								//让透明度减小了 
+								this.a *= this.va;
+							}
+						}else{
+							//重新初始化雨滴
+							this.init();
+						}
+						
+					}
+					
+				}
+			}
+			//实例化雨滴对象
+			/*var drop = new Drop();
+			//console.log(drop)
+			drop.init();
+			setInterval(function(){
+				//cxt.clearRect(0,0,w,h);
+				//绘制一个透明层来覆盖
+				cxt.fillStyle = "rgba(0,0,0,0.1)";
+				cxt.fillRect(0,0,w,h);
+				//先绘制透明层 再绘制雨滴
+				drop.draw();
+			},30)*/
+			
+			var drops = [];
+			for (var i=0;i<30 ;i++ )
+			{
+				setTimeout(function(){
+					var drop = new Drop();
+					drop.init();
+					drops.push(drop)
+				},i*200)
+				
+			}
+			//console.log(drops)
+			//setInterval(function(){
+				function move(){
+					cxt.fillStyle = "rgba(0,0,0,0.1)";
+					cxt.fillRect(0,0,w,h);
+					for (var i=0;i<drops.length ;i++ )
+					{
+						drops[i].draw()
+					}
+					requestAnimationFrame(move);
+				}
+				
+			//},1000/60)
+			move();
+			//生成随机数
+			function random(min,max){
+				return Math.random()*(max - min) + min;
+			}
+		</script>
+	</body>
+</html>
