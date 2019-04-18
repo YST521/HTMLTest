@@ -1,0 +1,37 @@
+
+.one{
+	background-color:  red;
+	width: 300px;
+	height: 300px;
+}
+
+.two{
+	background-color: greenyellow;
+	height: 300px;
+	float: left;
+}
+
+.bottomA{
+/*	float: both;*/
+	float: clear;
+	background-color: green;
+}
+
+.three{
+	background-color: yellow;
+	height: 300px;
+	float: right;
+}
+
+nav{
+	background-color: blue;
+	/*position: absolute;
+*/
+
+}
+ nav .head{
+ 	background-color: orange;
+/*	display: inline;
+*/	width: 33%;
+	 margin:20px auto;
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子模型</title>
+		<link rel="stylesheet" href="../css/CSSBOX.css" />
+		<style type="text/css">
+		#test {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+     #weilei:link{
+				color: red;
+			}
+			#weilei:visited{
+				color: orange;
+			}
+			#weilei:hover{
+				color: yellow;
+			}
+			#weilei:active{
+				color: green;
+			}
+	/*		1️⃣ focus 选择器 : 为了获得焦点的input   设置样式*/
+			input:focus {
+
+                                 height: 50px;
+
+                                 background-color: green;
+
+                            }
+        /*2️⃣ disabled 选择器 : 不能被选中的 input 设置样式*/
+               .oneDiv : disabled {
+
+                                background: raba(0, 0, 0, 0.2);
+
+                              }
+                              
+                /*  3️⃣ target  目标伪类选择器 :  只有跳转到该元素上时,样式才生效*/
+
+                .oneDiv1:target {
+
+                                background: darkturquoise;
+
+                              }
+
+                .oneDiv2:target {
+
+                                background: darkturquoise;
+
+                              }
+                              
+                    /*伪元素选择器 : */
+
+                    /* 1️⃣ first-letter :  选中元素内容的第一个字符*/
+
+                           .oneDiv11:first-letter{
+
+                                     font-size: 40px;
+
+                                     }
+
+       /*               2️⃣ first-line  : 选中元素内容的第一行*/
+
+                            .oneDiv22:first-line{
+
+                                    color: red;
+
+                                     }
+/*
+                     3️⃣ before :  在元素内容的最前面添加内容*/
+
+                           .oneDiv33:before {
+
+                                 content: "你好";
+
+                                  }
+
+                .oneDiv33{
+                  color:  green;
+                      }
+      
+
+            /*         3️⃣ after : 在元素内容的最后面添加内容*/
+
+                             .oneDiv44: after {
+
+                                  content: "666";
+                                  color: red;
+
+                                   }
+                   .oneDiv44{
+                   color:  red;
+                        }
+      
+      
+       
+		</style>
+		
+	</head>
+	<body>
+		<a href="http://www.runoob.com/css/css-boxmodel.html">Margin(外边距) - 清除边框外的区域，外边距是透明的。
+Border(边框) - 围绕在内边距和内容外的边框。
+Padding(内边距) - 清除内容周围的区域，内边距是透明的。
+Content(内容) - 盒子的内容，显示文本和图像。
+		 1️⃣ padding(内边距):  用于设置边框与内容之间的距离
+
+                                2️⃣ border(边框)样式设置:   
+
+                                                                      1, solid  实线;
+
+                                                                       2, dotted 点线
+
+                                                                       3, dashed 虚线
+
+                                                                        4, double 双实线
+--------------------- 
+</a><br />
+<a href="https://blog.csdn.net/weixin_43805321/article/details/84674237">元素浮动</a><br />
+<!--: float 浮动
+
+left right
+元素浮动，后面的元素会上移顶替原来的位置
+清除浮动: clear: left, right, both;
+position 定位
+relative: 相对他原来的位置， 原来的位置还占着
+absolute: 绝对于（相对定位的祖先元素）的位置，原来的位置不占了
+fixed: 静止定位 静止在窗口上
+今日单词
+float: 浮动
+
+clear: 清除
+
+position: 位置、定位
+
+top: 上、顶部
+
+left: 左侧
+
+right: 右侧、正确的
+
+bottom: 底部(注意区别button: 按钮)
+
+relative: 相对的
+
+absolute: 绝对的
+
+fixed: 静止的
+
+一  定位 (position) 目的 :  布局
+
+定位 (position) 分类 : 有以下四种
+
+            1️⃣   static (静态定位):        无参照物,不定位
+
+            2️⃣   absolute (绝对定位):   是相对于已经定位父元素为参照,但是父元素position属性值必须是(absolute或relative)                                    如果父级中都没有 position属性,最终以文档document(整个页面)进行定位.
+
+                                  绝对定位 ( absolute ) 特征: 
+
+                                                                        1,脱离文档流
+
+                                                                        2,提升元素层级
+
+                                                                        3,块元素margin 的左右 auto 失效
+
+                                                                        4,对块元素设置 绝对定位, 宽度不再独占一行,由内容撑开
+
+                                                                        5,对行元素设置 绝对定位后支持宽高,上下padding,上下border,上下margin
+
+              3️⃣    relative  (相对定位):    以自身没有移动之前的位置为参考
+
+                                     相对定位 (relative ) 特征: 
+
+                                                                        1,元素margin的左右auto不会失效
+
+                                                                         2,元素不会脱离文档流
+
+                                                                         3,相对于元素没有移动之前的位置进行定位
+
+                                                                         4,提升元素层级
+
+                                                                          
+
+              4️⃣    fixed      (固定定位):    以浏览器窗口为参照物
+
+                                    固定定位 (  fixed  ) 特征:
+
+                                                                       1,脱离文档流
+
+                                                                       2,提升元素层次(层级)
+
+                                                                       3,父级固定定位后,不用清除浮动的影响
+
+                                                                       4,IE 6不兼容该属性
+
+二   层级
+
+        层级: 后定位的元素会盖在先定位元素的上面
+
+                原因是定位元素的 z-index属性默认值都是0,因此会有以上现象(后来居上),z-index属性值越大,元素的层级越靠上
+
+三  透明度
+
+                 1️⃣   标准浏览器中使用opacity调整透明度 (取值范围:0~1)  opacity:   0.5 ;
+
+                 2️⃣   IE不识别opcity,使用自己的滤镜  alpha:滤镜中的透明度  opacity取值范围:0 ~ 100  filter:alpha(opacity=50);
+
+                 3️⃣   只改背景的透明程度 background: rgba(255,0,0,0.3);
+
+四  display(显示)
+
+                 1️⃣ none:  此元素不会被显示  (写在自己下一代中)
+
+                 2️⃣ block:  此元素将显示为块级元素,此元素前后会带有换行符 (结合后代选择器一块使用)
+
+                               .fatDiv:hover .sonDiv{
+
+                                    display: block;
+
+                                }
+
+
+--------------------- 
+作者：丶阿木 
+来源：CSDN 
+原文：https://blog.csdn.net/LuoLuoYan123/article/details/81488756 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+-->
+<div id="test">选择器</div><br />
+<a href="https://blog.csdn.net/LuoLuoYan123/article/details/81043483">选择器分类优先级</a>
+ <br />
+<hr /><hr />
+<div>盒子模型</div><br /> 
+
+<div class="one">
+	<nav>
+		<a class="head">111</a ><a class="head">222</a><a class="head">333</a>
+	</nav>
+	<div class="two">
+		<div>1111</div>
+		<div>222</div>
+	  </div>
+	<div class="three">
+			<div>1111</div>
+			<div>222</div>
+	</div>
+	<div class="bottomA">bottom</div>
+</div><br />
+
+
+
+
+<div>
+	<p style="font-size: 20px;color: red;">1 常用选择器</p>
+	<div> *{} 通配符选择器</div><br />
+	<div> 标签选择器  直接标签名 加{}</div>
+	<div>id选择器 id = @"id名"  :   #标签名 </div><br />
+	<div> class选择器  class = @"" ：.标签名</div>
+ 	<div> 群组选择器。将 选择器组合起来 中间逗号分开  p.oneDiv,#twoDiv,div{ } </div><br />
+ 	
+ 	<div style="font-size: 20px; color: red;">2 层次选择器</div><br />
+ 	<div>
+ 		<p>后代选择器</p>
+ 		<div id="div1">
+ 			.oneDiv p{ 
+            font-size: 80px;
+             color: red;
+     }	
+ 		</div><br />
+ 	
+ 	 	<div>
+ 		<p>父子选择器 父子选择器。(在儿子之后找)</p>
+ 		<div id="div2">
+ 		.oneDiv>.p{
+         background-color: pink;
+       }
+ 		</div>
+ 		
+ 		<div>
+ 		<p>相邻兄弟选择器。(只往下边找)</p>
+ 		<div id="div3">
+ 		.oneDiv+p{
+       background-color: gold;
+      }
+ 		</div>
+ 		
+ 	</div>
+ 	
+ 	<p style="font-size: 20px;color: red;">3 伪类选择器</p>
+ 	<div > 是系统为我们创建好的类 用来为标签的某个时机 设置对应的样式
+link ,visited,hover,active四个伪类选择器(四个状态)  
+    1️⃣：link 元素没有被访问时的状态
+   2️⃣：visited 元素点击之后的状态
+   3️⃣：hover 光标移动到元素时的状态
+   4️⃣：active 鼠标按下 没有 抬起时的状态  </div><br />
+ 	
+ 	<div>
+<p style=" font-size: 20px; color: red;">四、选择器优先级：</p>	
+
+选择的优先级
+  注意: 只有对相同元素设置相同样式时,我们才去讨论选择器的优先级问题
+  优先级顺序(从强到弱顺序):
+  1️⃣： !important
+  2️⃣： 行间样式(内联样式)
+  3️⃣： id选择器
+  4️⃣： class选择器,伪类选择器,属性选择器
+  5️⃣： 元素选择器,伪元素选择器
+  6️⃣： *(通配符)选择器
+  7️⃣： 元素的默认样式
+  当元素优先级相同时,后来居上(后面的代码覆盖前面的代码)
+ 
+  对于层次选择器:这里有个值可以帮助我们迅速判定那个层次选择器的有限极高
+  !important       100000
+  行间样式          10000
+  id选择器          1000
+  class选择器       100
+  标签选择器         10
+  对于群组选择器,各个单一选择器单独判定,互不影响
+
+ 
+ 	</div>
+ 	
+	
+</div><br />
+
+
+<!--
+			伪类选择器:是系统为我们创建好的类.用来为标签的某个时机 设置对应的样式
+			link ,visited,hover,active四个伪类选择器(四个状态)
+			     如果这个 4个伪类同时写的话,要注意先爱(love)后恨原则:
+			     1,link 元素没有被访问时的状态
+			     2,visited 元素点击之后的状态
+			     3,hover 光标移动到元素时的状态
+			     4,active 鼠标按下 没有 抬起时的状态     
+		-->
+		<a id="weilei" href="http://www.baidu.com">百度一下,你就知道</a><br />
+
+  <input /><br />
+  <input id="inp" /><br />
+  <div class="oneDiv">oneDiv</div><br />
+  <div class="oneDiv1">oneDiv</div><br />
+    <div class="oneDiv2">oneDiv</div><br />
+      <div class="oneDiv3">oneDiv</div><br />
+
+
+<div class="oneDiv11">oneDiv</div><br />
+<div class="oneDiv22">oneDiv</div><br />
+<div class="oneDiv33">oneDiv</div><br />
+<div class="oneDiv44">oneDiv</div><br />
+
+		
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+
+    div div{
+        width:500px;
+        height:500px;
+        outline:1px solid blue;
+        background-repeat:no-repeat;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="can" style="display:none;" width="300px" height="250px" style="border:1px solid red">
+        </canvas>
+        <div id="crop">
+            试试看
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        var can = document.getElementById("can"),cxt;
+        var crop = document.getElementById("crop");
+        console.log(can);
+        var cxt = can.getContext("2d");
+        cxt.fillStyle = "yellow";
+        cxt.moveTo(300,0);
+        cxt.lineTo(150,125);
+        cxt.lineTo(300,250);
+        cxt.stroke();
+        cxt.fill();
+
+        crop.style.backgroundImage = "url('"+can.toDataURL()+"')";
+                                    
+    </script>
+</body>
+</html>

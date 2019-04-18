@@ -1,0 +1,389 @@
+<!DOCTfYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	<!--两秒刷新一次-->
+		<!--<meta http-equiv="refresh" content="2">-->
+		<title>HTML标签熟悉</title>
+				<!--base-->
+		<!--<base href="http://www.runoob.com/html/html-head.html" target="_blank" />-->
+	<style type="text/css">
+		#yuan{
+			width: 400px;
+			height: 300px;
+		}
+		
+		#lyf{
+			width: 400px;
+			height: 300px;
+			
+		}
+		/*frameset {
+			background-color: red;
+		}
+		frame{
+			background-color: greenyellow;
+		}*/
+		nav{
+			background-color: greenyellow;
+			color: black;
+		}
+		nav a{
+			color:  black;
+			font-size: 30px;
+			text-shadow: 12px;
+		   
+		}
+		
+		label{
+			font-size: 30px;
+/*			text-shadow: 5px 5px 5px #000; */
+			/*不同颜色的,多个不同值的模糊大小*/
+			  font: bold 100px/1.5 georgia, sans-serif;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;*/*/
+		
+		}
+		
+	</style>
+	</head>
+	<body>
+		 <!--nav 头部 导航难-->
+ <nav>
+<a href="http://www.runoob.com/html/html-tutorial.html">HTML</a> |
+<a href="http://www.runoob.com/css/css-tutorial.html">CSS</a> |
+<a href="http://www.runoob.com/js/js-tutorial.html">JavaScript</a> |
+<a href="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a>
+</nav><br /><br />
+
+		<div>标签学习网站</div>
+		<a href="http://www.runoob.com/html/html-css.html">菜鸟教程</a><br />
+		<a href="http://www.w3school.com.cn/h.asp">W3C</a><br />
+		<a href="https://blog.csdn.net/luoluoyan123/article/month/2018/07">一个刚开始学习H5笔记博客 </a>
+		<a href="http://www.runoob.com/tags/ref-standardattributes.html">菜鸟标签</a><br />
+		<a href="http://www.runoob.com/html/html5-new-element.html">H5新标签</a><br />
+		<a href="http://www.runoob.com/tags/ref-eventattributes.html">标签事件️</a><br />
+		<a href="http://www.runoob.com/tags/ref-canvas.html">绘制阴影等</a><br />
+		
+	<!--hr 定义水平线-->	
+<hr><br<br />
+        <!--内联框架-->
+        	<iframe src="http://www.runoob.com/html/html-css.html"></iframe><br />
+		<iframe src="http://www.baidu.com"></iframe><br />
+		
+	<hr>
+		<!--使用量标签 ( meter ) :-属性值:  电池的使用量,内容的使用量等等
+  min:    最小值      max:    最大值   value:  当前值  low:    最小预警值  high:   最高预警值-->
+
+		 <meter min="0" max="100" value="10" low="20" high="80"></meter><br />
+		 <progress max="100" value="50">进度条</progress><br />
+		 
+		<!-- 词内换行( webr ) :  -->
+		  <p>
+		  	
+     山上  <webr> 有</webr>
+               <webr>只</webr>  老虎
+           </p>
+
+<!--ruby标签 ( ruby ) :   拼音,注音,注释等-->
+  <ruby>
+    红鲤鱼绿鲤鱼与驴
+      <rt>驴: lv </rt>
+      <rp>浏览器不支持该标签</rp>
+     </ruby><br />
+ 
+ <!--datalist 标签 :  结合 input 使用-->
+   <form action="#">
+
+                                            <!--input标签的 list 属性与 datalist 的id 配合使用-->
+
+                                           <input type="text" list="show" />
+
+                                           <datalist id="show">
+
+                                          <option value="一斤"></option>
+
+                                         <option value="一两"></option>
+
+                                        <option value="一钱"></option>
+
+                                        </datalist>
+
+                           </form>
+<!-- details 标签 :  自带折叠效果(可以 点击上下 箭头) summary 与 details 是一个组合,summary 是 details 的标题-->
+  <details>
+
+                                                    <summary>一天</summary>
+                                                    <p>一年</p>
+                                                   <p>一个月</p>
+
+     </details><br />
+ 
+<!-- audio 结合 source 标签使用     一个 source 代表一个播放资源       source 是用来解决不同浏览器版本支持的音频格式不统一的问题
+-->
+<!-- <audio autop  controls>
+
+                                    <source src="source 2/一双人-原声带.mp3"></source>
+
+                                   <source src="source 2/一双人-原声带.ogg"></source>
+
+                                 <source src="source 2/一双人-原声带.wav"></source>
+
+                         </audio>-->
+
+<!--video用户播放视频   : 支持三种格式: mp4, ogg, webm
+-->
+                           <video src="source 2/levelVedio.mp4" controls="controls" width="200px" width="100px"></video><br />
+
+                           <!--不同浏览器下的兼容格式-->
+
+                          <video width="200" height="100">
+
+                                  <source src="source 2/levelVedio.mp4" type="video/mp4"></source>
+
+                                 <source src="myvideo.ogv" type="video/ogg"></source>
+
+                                <source src="myvideo.webm" type="video/webm"></source>
+
+                        </video><br />
+
+<!--figure注释标签 : 包裹一段独立的内容,一般用来包裹图片,统计类的图表,代码等.(注释的内容写在 figcaption 标签中)-->
+                              <figure>阳光明媚</figure>
+        
+                            <img width="300" src="../img/888.gif" /><br /><br />
+                            
+<!--                            input :  type (text,password,submit,checkbox,radio,buttom,file,image,reset)-->
+
+ <!--   1, email 类型用于应在包含E-mail地址的输入域       例 :   <input type="email" />
+
+                             2, url类型用于应在包含url地址的输入域   例 : <input type="url" />
+
+                             3 ,颜色盘    例 : <input type="color" />
+
+                             4, number类型用于应在包含数值的输入域    step 设置步长(每次的变化量)   例 :  <input type="number" value="2" step="10" />
+
+                            5, 滑竿  min: 最小值   max: 最大值  valie: 当前值   例 :  <input type="range" min="0" max="100" value="20" />
+
+                            6, date 选取日月年   例 : <input type="date" />
+
+                             7, month 选取月年   例 : <input type="month" />
+
+                            8, week 选取周和年    例 : <input type="week" />
+
+                            9, time 选取时间（小时和分钟）  例 : <input type="time" />
+
+                           10, datetime选取时间、日、月、年（UTC时间）   例 : <input type="datetimel" />
+
+                           11, datetime-local 选取时间、日、月、年（本地时间）  例 : <input type="datetime-local" />
+
+                           12, required: 修饰文本输入框,文本内容不能为空    例 : <input type="text" required="required" />
+
+                           13, autofocus 修饰输入框,自动获取焦点    例 : <input type="text" autofocus="autofocus" />-->
+
+
+<input type="email" /> <input type="url" /> <input type="color" /> <input type="number" value="2" step="10" /> <input type="range" min="0" max="100" value="20" />
+
+<input type="date" />  <input type="month" /> <input type="datetimel" />  <input type="datetime-local" />  <input type="text" autofocus="autofocus" /> <br />
+
+<!--time : 标签语义化-->
+ <!--修饰时间-->   <time>15:00</time>喊了一声.... <br />
+ <!--内容展示给用户,具体的时间不会显示出来,隐藏的来获取事件--> <time datetime="2018-07-23 15:03:06">我的时间是隐藏的</time><br />
+ 
+ 
+<!-- 在当期的网页中展示另一个网页,被称为网页中的网页 -->
+<iframe src="http://www.baidu.com" width="500" height="500"></iframe><br />
+
+<!--embed: 用来嵌入对应的一些插件,比如flash插件 等,注意修改对应的type类型-->
+<embed src="../Source/mov_bbb.mp4" type="ee" width="500" height="500"/></embed>
+
+
+		 <hr />
+		标题
+		<h1>1111111111</h1>
+		<h2>222222222</h2>
+		<h3>3333333333</h3>
+		<h4>44444444444</h4>
+		<h5>55555555555</h5>
+		<h6>666666666666</h6>
+		
+		<!--段落-->
+		<p>这是第一段</p>
+		<p>这是第二段</p>
+		<!--br换行文本-->
+		<br />
+		<!--b-->
+		<b> 这是一个加粗文本</b><br />
+		
+		<!--bdo 文字方向  right to left-->
+		<p>文字从左到右</p><br />
+		<p><bdo  dir="ltr">文字从右到左</bdo></p>
+		<p><bdo  dir="rtl">文字从右到左</bdo></p>
+		<!--i 文字斜体-->
+		<p>He named his car <i>The lightning</i>, because it was very fast.</p>
+
+		<p>西红柿炒番茄 <del>💰99</del> <ins>只要💰9.9</ins>!</p>
+
+      <label> 文本标label</label><br />
+      
+      <!--span-->
+      <p>大白菜 <span style="color:greenyellow;font-weight:bold">10元</span> 一斤，萝卜<span style="color:red;font-weight:bold">12元</span> 一斤。</p>
+      
+ <li>111111</li>
+ <li>22222</li><br />
+ 
+
+ 
+
+		
+   <!--button-->
+   <button onclick="btnClick()" id="btn" >w我是一个button</button><br />
+   
+   <!--输入框-->
+  <input /><br />
+  <!--caption-->
+  <table border="1">
+  <caption>表格</caption>
+  <tr>
+    <th>第一行</th>
+    <th>1111</th>
+  </tr>
+  <tr>
+    <td>第二行</td>
+    <td>22222</td>
+  </tr>
+</table><br />
+
+<!--<frameset cols="25%,50%,25%">
+  <frame src="HtmlCollect.html">
+  <frame src="CSSBOX.html">
+  <frame src="CssHtml.html">
+</frameset>-->
+<a  href="Table.html">表格练习</a><br />
+		
+		
+<img src="../img/888.gif" width="145" height="126" alt="Planets" usemap="#planetmap"><br />
+ 
+<!--<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>-->
+ 
+<aside>
+  <h4>Epcot Center</h4>
+  <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+</aside>
+		
+		<!--address-->
+		<address>
+Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+Visit us at:<br>
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address><br />
+<!--article-->
+<article>
+	<h3>世界上最大飞机首飞成功</h3>
+	<p> 世界上最大的飞机——“平流层发射”（Stratolaunch），于当地时间13日在美国加利福尼亚的莫哈韦沙漠完成了首次试飞，首航飞行持续150分钟，之后顺利降落。</p>
+	<br />
+	<img id="fly" src="../img/fly.jpeg" /><br />
+	<p>
+		这架六引擎、双机身的飞机重达50万磅（约226.8吨），翼展385英尺（约117米），它的终极目标是运载火箭，然后将卫星送入太空。
+    据《卫报》，美国太空运输公司“平流层发射系统”（Stratolaunch Systems）潜心研发这一庞然大物已经8年。该公司CEO弗洛伊德（Jean Floyd）在首飞后的新闻发布会上说：“我们终于做到了，看着这只鸟飞起来，是一个激动人心的时刻。”
+	</p>
+	
+	
+</article>
+		
+				<!--图片-->
+		 <div>中国猿分布图</div><br />
+	      <img id="yuan" src="../img/map.png" /><br />
+		
+		<!--链接-->
+		<a href="http://baidu.com">百度</a>
+		
+     <!--换行-->
+     <div>aaa</div><div>bbb</div><br /><div>ccc</div>
+     
+     <!--div最常用标签-->
+     <div>6666</div>
+     
+         <div id="1">1111 </div>
+     	 <div id="2">2222	</div>
+     	<div id="3"> 3333</div>
+     	
+     <!--//video-->
+     <a href="http://www.w3school.com.cn/tags/att_video_autoplay.asp">video</a><br />
+     <video  width="200px" height="200px" controls="controls" autoplay="autoplay">
+<!--     	<source src="https://sv.baidu.com/videoui/page/videoland?pd=bjh&context={%22nid%22:%229751090631804793818%22,%22sourceFrom%22:%22bjh%22}&fr=bjhauthor&type=video">网络视屏</source>
+-->     <!--本地-->
+     <source src="../Source/mov_bbb.mp4"   > 本地</source>
+     </video><br />
+     
+     <!--音频-->
+     <audio  controls="controls">
+     	<source src="../Source/horse.mp3">音频</source>
+     	您的浏览器不支持 audio 元素。
+     </audio><br />
+     	<address>河南省</address>   
+     
+     <a href="###">这是一个空链接</a><br />
+     <a href="javascript:void(0)">空链接第二种写法</a><br />
+
+     <p>  _balnk：重新生成新的标签页 再 打开页面。</p>
+     <p>_self: 直接在当前标签页 打开页面。</p>
+  
+     <a href="http://www.baidu.com" target="_blank"> baidu</a><br />   <!--另开页面-->
+     <a href="http://www.baidu.com" target="_self" > baidu</a><br />  <!--当前页面打开-->
+
+<!--<!--签页打开。--><!--arget: 设置页面是否在当前标-->
+
+<!--分别为 斜体  斜体 正常加粗。-->
+<i>崔永元</i>
+<em>范冰冰</em>
+<strong>冯晓刚</strong><br />
+
+<!--q: 引用标签，用来应用一句话。-->
+  <hr>
+古人云：<q>人终有一死</q>
+
+<hr><br />
+<img src="../img/888.gif" alt="暂无图片" width="100" hejght="100" title="呵呵"><br />
+<img src="img/1.jpg" alt="暂无图片" width="100" hejght="100" title="呵呵"><br />
+
+<p style="font-size: 20px;">1️⃣ 块级标签(块属性标签)</p>
+<div>
+
+   特征：
+
+               a 支持宽高设置,并且设置宽高之后,仍支持独占一行
+
+       b 支持  上下 padding  和 上下 margin
+</div>
+<p style=" font-size: 20px;">2️⃣ 行级标签(行属性标签)</p>
+<div>
+
+   特征:
+       a 行级标签,在同一行展示。
+       b 不支持宽高设置,宽高由自身内容撑开。
+       c 不支持 上下 padding。
+--------------------- 
+！</div>
+
+   <a href="#">返回顶部</a>
+		
+</body>
+
+   <!--  script -->
+
+     	<script type="text/javascript">
+	
+		function btnClick(){
+		
+//		alert(document.getElementById("btn").id)
+         alert("99999999");
+		}
+		
+	</script>
+	
+</html>

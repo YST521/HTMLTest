@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<title>表格</title> 
+</head>
+
+<!--一  表格 ( table )
+
+                       表格 ( table ) 作用 :  
+
+                                                  1️⃣   在以前使用table进行页面布局(现在极少使用)
+
+                                                  2️⃣  作为表格来显示数据
+
+                       表格组成 :  thead    tbody   tfoot  三部分组成, 但是这三个标签都可以省略不写, 浏览器会自动帮我们添加.
+
+                       表格相关标签及属性 :
+
+                                              tr标签:                   代表表格中的一行
+
+                                              td标签:                  代表每一行中 一个单元格
+
+                                              th标签:                  代表每一列的标题
+
+                                             table标签:              代表当前创建的一个表格
+
+                                             border属性:            表格的边框, 值为0代表无边框
+
+                                             caption标签:           代表表格的标题
+
+                                             cellspacing属性:     单元格与单元格之间的间距
+
+                                             cellpadding属性:    单元格内容与边框之间的间距
+
+二  合并单元格
+
+                单元格合并方向 :  colspan: 合并列(横向合并)    rowspan: 合并行(纵向合并)
+
+                                             width: 设置td/th的宽度          height: 设置td/th的高度
+
+               注意: 以上四个属性都是 th/td 的属性, 并且 width 会影响一列, height 会影响一行
+
+              cellspacing="0" 是设置单元格边框的间距为0, 并不是合并了单元格
+
+             CSS 中 border-collapse 是用来设置单元格的边框是否合并
+
+            属性值:     separate: 默认值, 不合并        collapse: 合并
+
+三  表单种类
+
+                  form 表单 :    action: 设置服务器地址    method: 跟服务器打交道方式
+
+                                 两种:   1️⃣   get: 默认值, 参数可见, 不太安全   2️⃣   post: 参数不可见, 较安全, 多用于登录, 注册
+
+                                 例:    <form action="http://www.baidu.com" method="get">
+
+                  账号密码登录框 :
+
+                                 例 :
+
+                                  账号:  <input type="text" name="UN" value="" placeholder="请输入用户名" />
+
+                                  密码:  <input type="password" name="PW" />
+
+                 对应属性 :
+
+                                type:             是input的类型
+
+                               name 属性:    提交给后台时, 键值对 的key值, 很重要, 将来会由后台告诉我们该写什么值.
+
+                              value 属性:     将来提交给服务器的数据 
+
+                              placeholder属性:   框中给用户提示内容
+
+     选框分类 :  单选框    多选框  选择列表框
+
+              单选框两种方法: 
+
+                                                    1️⃣ 例 :  <label> <input type="radio" name="sex" value="男" checked /> 男 </label>
+
+                                                    2️⃣  例 :   <input type="radio" name="sex" value="女" id="girl" />      <label for="girl">女</label>
+
+               多选框  : 从功能上而言, 一组多选框的name属性值不能相同value属性值 是提交给后台的值, 后面跟的文字是给用户看
+
+                                                    1️⃣ 例:  爱好: <input type="checkbox" name="basketball" value="篮球" />篮球
+
+                                                                         <input type="checkbox" checked />排球
+
+                                                                         <input type="checkbox" />足球
+
+               选择列表框 :
+
+                                                  1️⃣ 例 :     <select name="private">
+
+                                                                              <option value="乒乓球">乒乓球</option>
+
+                                                                             <option value="羽毛球">羽毛球</option>
+
+                                                                             <option value="铅球" selected>铅球</option>
+
+                                                                </select>
+
+四  按钮种类
+
+             按钮分类 : 普通按钮    文件搜索按钮     重置按钮    图像按钮(该按钮自带提交功能)   隐藏按钮( 用户看不见 从功能上而                                   言, 隐藏按钮用来采集用户信息, 定期向服务器发送数据等)
+
+                       普通按钮 :  value: 设置按钮上的文字
+
+                                        该按钮只是一个普普通通的按钮, 不像submit那样带有提交功能, 该按钮的功能将来需要通过 JS 来设置.
+
+                                       1️⃣ 例 : <input type="button" value="普通按钮" />
+
+                       文件按钮 : 过 file 按钮我们可以选择向服务器上传的文件, 进而执行上传操作.
+
+                                      2️⃣ 例 :  <input type="file" />
+
+                      重置按钮 : 该按钮自带重置功能, 会使所有的input都返回到原始状态. 开发中很少使用      
+
+                                      3️⃣ 例 :  <input type="reset" value="重置" />
+
+                      图像按钮  :  该按钮自带提交功能
+
+                                      4️⃣ 例 :  <input type="image" src="img/login_btn_normal@2x.png" width="150" />
+
+                      隐藏按钮  : 用户看不见  从功能上而言, 隐藏按钮用来采集用户信息, 定期向服务器发送数据等
+
+                                      5️⃣ 例 :  <input type="hidden" />
+
+五   文本域
+
+                文本域相关属性 :   
+
+                                          cols: 设置宽度                      rows: 设置高度
+
+                                          实际开发过程中, 一般不使用以上两个属性, 而是使用 CSS 来设置 文本域 的宽和高.
+
+               resize属性:        用来设置 元素能够改变大小
+
+                            属性值:
+
+                                     none             不能调整大小
+
+                                     both              可以调整大小
+
+                                    horizontal      只能调整宽度
+
+vertical 只能调整高度
+
+ 
+
+outline: none; 编辑文本域时, 边框不再变蓝
+！-->
+
+<body>
+
+ <!--列表- col表格列设置 ->-->
+ 	
+ 	<table border="1">
+  <colgroup>
+  	  <col span="0"  style="background-color:yellow">
+  	  	<col span="1" style="background-color:red">
+  	  	 <col span="2"  style="background-color:greenyellow">
+
+  </colgroup>
+  <tr>
+    <th >第一列</th>
+    <th>第二列</th>
+    <th>第三列</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>11</td>
+    <td>111</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>22</td>
+    <td>222</td>
+  </tr>
+    <tr>
+    <td>333</td>
+    <td>33</td>
+    <td>3</td>
+  </tr>
+  
+</table><br />
+
+
+<p>点击太阳或其他行星，注意变化：</p>
+
+<img src="../img/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">   <!--此处需要另写 -->
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map><br />
+<a href="http://www.runoob.com/try/try.php?filename=tryhtml_areamap"> 例子来源</a><br />
+
+
+<a href="HtmlCollect.html">backHtmlCollect</a>
+
+</body>
+
+</html>
