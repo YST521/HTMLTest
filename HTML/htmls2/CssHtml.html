@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>css熟悉</title>
+		
+		<style type="text/css">
+			
+			/*内部样式*/
+			p{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				background-color: palevioletred;
+			}
+			#pp{
+				background-color: paleturquoise;
+				width: 500px;
+				height:80px;
+			}
+	/*外部样式*/
+		/*	@import url("CssTest.css");*/
+		</style>
+		
+			<!--/*外部样式 需要建CSS文件 并 link css路径*/-->
+		<link rel="stylesheet" href="../css/CSSTEST.css" />
+		
+		
+	
+		
+	</head>
+	<body>
+		<a href="http://www.divcss5.com">DIVCSS </a>
+		<div>CSS主要是选择器和盒子模型。选择器是找到标签的方法。盒子模型是将标签放在什么位置以及父子标签关系位置</div><br />
+		<div> H5标签  确定页面的主结构 和层次 搭建项目主要框架结构 相当与造房子的框架  </div><br />
+		<div>css 层叠样式表  主要是进行标签的美化    网站同样是 菜鸟教程 和 w3c </div><br />
+		<h3>CSS 样式</h3>
+			<div>css 分为 内联样式- 在HTML元素中使用"style"  属性</div><br />
+			<div>  内部样式表 -在HTML文档头部 head 区域使用style 元素 来包含CSS</div><br/>
+            	<div> 外部引用  link 或者  style 里用	@import url("CssTest.css");  - 使用外部 CSS 文件  </div><br/>
+            	
+            	<h3> CSS 两个原则</h3><br />
+            	<p> 1 就近原则 内联 内部  外部 谁离标签近 就显示谁的样式 （一般 行内样式最近）
+            	</p>2 叠加原则  上面多个</p>
+            	
+            	<h3> 选择器</h3><br />
+            	<div> css里一个重要概念 选择器  顾名思义就是如何找到你想要操作的标签</div>
+            	<div>权重等级与权值： 
+   行内样式（1000）>id选择器（100）>类、属性选择器和伪类选择器（10）>元素和伪元素（1）>*(0)</div><br />
+   <a href="https://blog.csdn.net/weixin_39141044/article/details/80815529">选择器总结博客</a><br />
+            	
+         <!--内联样式-->  	
+        <div style="width: 200px; height: 40px; background-color: red;">1111</div>
+        <div style="width: 100px;height: 100px;background-color: green; font: '微软雅黑'; ">22222</div>
+        <div style="width: 200px;height: 50px; background-color: orange; text-align: center;">3333333</div>
+        
+        <!--内部样式-->
+        <p>AAAAAAAA</p>
+        <p id="pp">BBBBBBB</p>
+           
+           
+           <!--外部样式 写在CSS里通过link 链接-->
+          <h1>HHHHHHHHHHHHHHHHHHHHHHHHHHHH1</h1>
+          <h2>6666 标签选择器</h2>
+            
+            <div id="dd">  这是ID选择器   </div>
+            <div class="classSEL"> 这是类选择器</div>
+            
+            <div class="fulei">
+            	<div>
+            		sssssssss
+            	</div>
+            </div><br />
+		
+		   <div id="r">1111</div>  
+			<div id="rr">1111</div>
+			<div id="rrr">1111</div>
+			<div id="rrrr">1111</div><br />
+			
+			<h1>1111111</h1>
+			<h2>2222222</h2>
+			<h3>333333</h3>
+			<h4>44444444</h4>
+			<h5>555555</h5>
+			<h6>666666</h6>
+			<article> ddddddddddddddddd</article>
+			
+			
+			<div class="classALL">yyyyyyy</div>
+			<li class="classALL">ZZZZZZZ</li>
+				
+			
+			<h2 title="888899">89898</h2>
+			<a title="rttretre" href="http://baidu.com">baidu</a>
+			<h3 title="kkkk">45435354353</h3>
+		
+	</body>
+</html>
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS_02</title>
+		<!--viewport视区  如果我们的网页想要在移动端也正常,需要添加下面这行代码 -->  
+<!--		  为了使我们的网页兼容移动端,当前网页中需要设置一下代码,原因是: 移动端 viewport的默认亮度跟当前设备宽度不一致,然后布局又是基于viewport 进行布局的,因为需要添加下面的代码.
+-->
+<!--viewport  属性值  : 
+
+                                                                   width:             设置voewport宽度
+
+                                                                   height:            设置viewport高度(一般不进行设置)
+
+                                                                   initial-scale:     页面初始比例-->
+<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+-->
+
+		<style type="text/css">
+		article{
+				padding-left: 100px;
+				padding-bottom: 100px;
+			} 
+			
+			p{
+				text-indent: 2em;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>div, section, article 三个标签的语义性是依次增强的.</div><br />
+		<div>     属性应该按照特定的顺序出现以保证易读性；
+ <span> class </span> 
+id
+name
+data-*
+src, for, type, href, value , max-length, max, min, pattern
+placeholder, title, alt
+aria-*, role
+required, readonly, disabled
+</div>
+
+		<p>div: html 早期标签,不存在浏览器兼容性问题,但是也没有任何语义 没有任何样式都需要自己添加 纯标签 但是可以添加更多样式</p>
+		<p>article: H5吸新增标签,有更强的语义性,适用于含有标题并且对于网页比较独立的一段内容,但是IE以上才支持该标签 </p>
+	    <p>section: H5新增标签,有比较强的语义特性,适用于含有标题的文本,但是IE8以上才支持该标签</p><br />
+	    <p> 流式布局 / 响应式布局 / media媒体查询  </p>
+	    <div>
+	    	<h4>流式布局</h4>
+	    <div>流式布局: 本质上是百分比布局 (百分比是基于父级的大小) (外接  .css文件)</div><br />
+	    <h4>响应式布局 : 根据浏览器宽度不同使用不同的布局风格(根据缩放浏览器窗口 内容进行变化) (外接  .css文件)</h4>
+	    <br />
+	   <div>
+	   	<p>    大于 1000px " (  link media="screen and (min-width:1000px)" rel="stylesheet" type="text/css" href="css/base03.css"/>> "</p>
+	   	<p>小于 600px  (  link media="screen and (max-width:600px)" rel="stylesheet" type="text/css" href="css/base01.css"/> </p>
+	   	<p>大于 600px 小于 1000px   ( link media="screen and (min-width: 600px) and (max-width: 1000px)" rel="stylesheet" type="text/css" href="css/base02.css"/> </p>
+
+    <br  />
+    <h4>media媒体查询:  就是来查询浏览器宽度和高度  (外接  .css文件)</h4>
+
+	   	<div>
+	   	<p>大于 1000px  </p><br />
+	    	<p> 	 @media only screen and (max-width: 1000px) { </p>
+.               	<p>                             .oneDiv{   </p>
+                    	<p>                         background: red; </p>
+                    	<p>                       } </p>
+                   	<p>           } </p>
+
+</div><br />
+
+	   	<p>小于 600px </p><br />
+	      <p> @media only screen and (min-width: 600px) { </p>
+
+                         <p>             .oneDiv{ </p>
+
+                         <p>            background: yellow; </p>
+
+                           <p>         } </p>
+
+                  <p>     } </p>
+
+
+</div><br />
+	 
+		   	<p>大于  600*px    小于100px   </p><br />
+	        <p> @media only screen and (min-width: 600px) and (max-width: 1000px) { </p>
+
+                                  <p> .oneDiv{ </p>
+
+                                <p>   background-color: greenyellow; </p>
+
+                              <p>    } </p>
+
+              <p>    } </p>
+
+
+</div><br />
+
+	 <p></p>
+	   </div>
+	    
+	    	
+	    </div>
+	    
+	<p></p><br />
+	
+	<hr />
+	
+<!--	  导航标签 在顶部-->
+	  <div id="test" style="width: 400px;height: 400px; background-color: cyan; ">
+	  	
+	  	    <nav style="background-color:  red;">
+    
+    <a>1111 </a> <a>我是nav 导航栏</a> <a>3333</a>
+    </nav>
+	
+<!--	
+	   侧边栏-->
+
+      <aside style="background-color: greenyellow;width: 100px; height: 360px;">
+      	<div >66666</div>
+      	<div>66666</div>
+      	<div> 我是aside 侧边栏 </div>
+      	<div>666666</div>
+      </aside>
+	  	
+	  </div>
+	  
+
+	
+	<hr />
+	<!--一篇文章的结构-->
+	<article>
+		<header>
+			<h2>科技大事早知道：亚马逊中国停止第三方商家服务；iPhone XE曝光</h2>
+			<br />
+			<br />
+			<img style="width: 400px ;height: 300px; " src="../img/news.jpeg" />
+		<br />
+		<p>科技大事早知道，是百度APP科技频道联合智东西推出的科技早报，主打AI、5G、新出行等科技新趋势报道，让你在3分钟内，尽览最新最热的科技圈前沿话题。
+</p>
+		</header>
+		<section>
+			<h4>1、台积电一季度盈利创七年最大降幅</h4>
+			<p> 4月19日消息，全球最大芯片代工商台积电周四盘后发布的财报显示，今年一季度盈利创下7年多以来最大降幅，加剧了人们对电子产品需求放缓对其业务产生影响的担忧。该公司一季度净利润为614亿新台币（约合19.9亿美元），较上年同期下降31.6%，创下自2011年三季度以来最大降幅。这一业绩低于Refinitiv调查的21位分析师平均预期的643亿新台币。台积电一季度营收下降16.1%，至71亿美元，与该公司此前预期的70亿-71亿美元基本一致。</p>
+				<p> 第二段</p>
+		</section>
+	
+		<section>
+			<h4>2、亚马逊中国停止第三方商家服务</h4>
+			<p> 4月18日中午，根据新浪科技的报道，亚马逊中国确认，将于2019年7月18日停止为亚马逊中国网站上的第三方卖家提供卖家服务</p>
+				<p> 亚马逊中国称，在过去几年中，亚马逊中国持续聚焦并发力跨境在线零售业务，获得了中国消费者的积极反馈和认可，为了深化这一战略转型，我们将于2019年7月18日停止为亚马逊中国网站上的第三方卖家提供卖家服务。此外，将与所有卖家紧密合作，完成后续交接事宜，以确保持续为用户提供优质的购物体验。同时，此次调整中受到影响的卖家如希望继续与亚马逊合作并拓展全球市场，可以联络亚马逊全球开店团队获得帮助。</p>
+		</section>
+		
+			<section>
+			<h4>3、网曝三星Galaxy Fold屏幕出现问题</h4>
+			<p> 北京时间4月18日下午消息，据美国财经网站CNBC报道，三星电子股价今日下跌逾3%，原因是在其首款可折叠屏幕手机Galaxy Fold即将正式开售之前，媒体评测人员却给出了不好的消息。Galaxy Fold在今年的世界移动通信大会前夕发布，售价1980美元，目前仅提供给媒体供评测人员使用，预计于本月晚些时候在美国和其他一些国家及地区正式开售。</p>
+				<p> 对Galaxy Fold在评测中出现的各种屏幕问题，三星在一份声明中称，正在评估这些问题报告。三星称：“我们向媒体提供了数量有限的早期版本的Galaxy Fold样机，供其评测。近日，我们收到了有关屏幕问题的评测报告，公司将对这些问题手机展开彻底调查，以确定原因。”</p>
+		</section>
+		
+		<footer>这是文章结尾 4月18日消息，据报道，苹果公司将于本月底公布2019年第二财季财报，一家名为OTR Global的媒体研究公司发布了一份投资者报告，报告中称2019年第二财季苹果iPhone出货量在3700万至4200万部之间。华尔街分析师的预测是4000万至4500万部之间。OTR表示，他们对亚洲18位供应链高管进行了调查，最终结论是，苹果本季度很可能达不到预期。</footer>
+		
+	</article>
+	
+	
+	</body>
+</html>

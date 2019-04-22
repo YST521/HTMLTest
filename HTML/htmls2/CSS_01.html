@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS_02</title>
+		
+		<!--3,外部样式-->
+		
+		<!--a,通过 link 引入-->
+		<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
+		<!--b, 通过 import 引入-->
+
+	<!--	<link rel="stylesheet" href="../css/CSS_01.css" />-->
+		<style type="text/css">
+			
+			@import url("../css/CSS_01.css");
+			
+			body{
+			/*	background-image: url(../img/bg1.png);*/
+				
+	 background: url(../img/bg1.png) bottom center no-repeat #efeff4 ;
+    background-size: 100% 100%;
+    /*width: 100%;
+    height: 100%;*/
+    
+/*				background-attachment:fixed;
+*/				/* background-repeat:repeat-x;  */ /*横向平铺*/
+/*background-repeat:repeat-y;  纵向平铺*/
+			}
+			
+			.classDiv{
+				
+				background-color: greenyellow;
+				width: 200px;
+				height: 50px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<a href="https://blog.csdn.net/LuoLuoYan123/article/details/81042813">文字样式</a>
+		<p></p>
+		<img src="../img/cssbox.png" /><br /> <img style="width: 1200px ; height: 800px;" src="../img/htmlTEXT.png" />
+		<img src="../img/cssbox.png" /><br /> <img style="width: 1200px ; height: 800px;" src="../img/列表.png" />
+	    
+<!--	     属性值：    none   无        underline  下划线        line-through       删除线              overline     顶划线 例：--> 
+		<div style="text-decoration:line-through;">
+		我是我
+	</div><br />
+	
+	<hr />
+	 <div id="title">外部样式</div><br />
+	  <div id="divw"> 这是import外部样式</div><br />
+	
+	<div class="chnageColor">渐变色</div>
+	
+<hr />
+<!--	属性值:       noue              不转换(全)      uppercase      转换大写(全)         lowercase       转换小写(全)       capita            首字母大写 例：-->
+	<div style="text-transform:uppercase ;"> 
+		daxiaoxie
+	</div><br />
+	
+<!--	font-variant: "小型" 大写字母 	关键字:   normal       正常效果(默认值)    small-caps   小型大写字母字体(注:当英文是小写时,才会变大写,文本字体才会变小)	
+-->
+<div style="font-variant:normal;">
+		hello
+	</div>
+	<div style="font-variant:small-caps;">
+		Hello
+	</div><br />
+
+<!--text-indent: 首行缩进 	属性值: px em rem 百分比  注:文字的默认字体大小 16px  1em = 16px
+-->
+	<div style="text-indent:2em ;">这是CSS练习......</div><br />
+
+		<!--text-align: 设置文本对齐方式
+		属性值:
+		      left      左对齐(默认值)
+		      center    居中对齐
+		      right     右对齐-->
+	
+	<div class="classDiv" style="text-align: left;">123</div><br />
+	<div  class="classDiv" style="text-align: center;">123</div><br />
+	<div  class="classDiv" style="text-align: right;">123</div><br />
+	<div  class="classDiv" style="text-align:center;">123</div><br />
+	<!--
+		line-height: 设置行高
+		属性值:
+		     px  em rem 百分比	     
+	-->
+	<div style="line-height: 30px;">南水北调...</div>
+	
+		<div style="letter-spacing: 20px;">我爱你, I love you!</div>
+		<!--
+		line-height: 设置字距(单词之间的间距)
+		属性值:
+		     px  em rem 百分比	     
+	-->
+	<div style="word-spacing: 20px;">我爱你, I love you!</div>
+		<!--字体属性-->
+		<!--
+			font-family: 设置文档类型
+			属性值:具体的字体类型
+		-->
+		<div style="font-family: STKaiti;">
+			好好学习,天天向上  Good good study,Day day up</div>
+			<!--
+				font-size: 设置字体大小
+				属性值:
+		              px  em rem 百分比
+			-->
+	    <div style="font-size: 36px;">
+	    	好好学习,天天向上  Good good study,Day day up </div>
+	    	<!--
+	    		font-weight:设置字体粗细
+	    		属性值: 
+	    		      lighter  normal(正常值)  bold   bolder 100 200 300 400 500 600 700 800 900   其中 400 相当于normal, 700 相当于bold 	
+	    	-->
+		<div style="font-weight: 900;">
+	    	好好学习,天天向上  Good good study,Day day up </div>
+	    	<!--
+	    		font-style:设置字体样式
+	    		属性值: 
+	    		      normal    正常字体
+	    		      italic    斜体
+	    		      oblique   字体倾斜
+	    	-->
+		<div style="font-style: oblique;">好好学习,天天向上  Good good study,Day day up 
+			<!--
+				color: 设置字体颜色
+				属性值:
+				    颜色单词,十六进制颜色,rgb,rgba	
+			-->
+			</div>
+		<div style="color: #f0f0f0;">好好学习,天天向上  Good good study,Day day up
+		</div>
+		<!-- 背景设置 -->
+		<!--
+			background-color: 设置背景颜色
+			属性值:
+			      颜色单词,十六进制颜色,rgb,rgba
+		-->
+		<div style="background-color: red; width: 200px; height: 100px";>
+			<div style="background-image: url(../img/888.gif); width: 200px; height: 100px";>
+			撸起袖子加油干!</div>
+
+<!--
+				background-repeat: 设置背景图片是否平铺
+				属性值:
+				      repeat   平铺(默认值)
+				      no-repeat  不平铺
+				      repeeat-x  只在水平方向平铺
+				      repeeat-y  只在垂直方向平铺
+			-->
+		<div style="height: 100px; background-image: url(img/1.jpg); background-repeat:no-repeat;">
+	撸起袖子加油干!
+		</div>
+		<!--
+			background-posution: 设置图片的位置
+				属性值: 
+					1,left,right,top,bottom,center两两组合形成的 九个位置
+			        2,x% y%(百分比)
+			        3,xpx ypx(像素值)
+		-->
+	<div style="height: 100px; background-image: url(img/1.jpg); background-repeat: no-repeat; background-position:
+		 center center">	撸起袖子加油干!</div>
+
+
+		
+		
+		<a href="#">返回顶部</a>
+		<p>
+			CSS各种样式设置包括以下内容：文本样式   字体样式    背景样式    样式使用方法
+
+一、文本样式:
+
+1️⃣： text-decoration: 分别文本设置下划线,删除线,顶划线。
+
+        属性值：
+
+                       none                 无
+                       underline           下划线
+                       line-through       删除线
+
+                       overline             顶划线
+
+例： <div style="text-decoration:line-through;">我是我</div>
+
+2️⃣： text-transform: 设置文本大小写。(文本英文)
+
+       属性值:     
+
+                        noue              不转换(全)
+
+                        uppercase      转换大写(全)
+                        lowercase       转换小写(全)
+                         capita            首字母大写
+
+例：<div style="text-transform:uppercase ;">asd</div>
+
+3️⃣: font-variant: "小型" 大写字母。
+
+     属性值：
+
+                    normal        正常效果(默认值)
+
+                    small-caps   小型大写字母字体。(注:当英文是小写时,才会变大写,文本字体才会变小)
+
+例： <div style="font-variant:normal;">hello</div>	
+
+3️⃣： text-indent:  首行缩进。
+
+        属性值：px  em  rem  百分比（注:文字的默认字体大小 16px 1em = 16px）
+
+例：<div style="text-indent:2em ;">中午吃什么?史诗级难题......</div>
+
+4️⃣： text-align: 设置文本对齐方式。
+
+       属性值：
+
+                        left            左对齐(默认值)
+                        center       居中对齐
+
+                        right          右对齐    
+
+例: <div style="text-align: left;">123</div>
+
+6️⃣：line-height: 设置行高。
+
+      属性值： px  em rem 百分比
+
+例：<div style="line-height: 30px;">南水北调...</div>
+
+7️⃣：letter-spacing:  设置字距。(单词之间的间距)     
+
+      属性值： px  em rem 百分比
+
+例： <div style="letter-spacing: 20px;">我爱你, I love you!</div>
+
+8️⃣：word-spacing:  设置词距。(单词之间的间距,以空格为属性)
+
+      属性值： px  em rem 百分比
+例：<div style="word-spacing: 20px;">我爱你, I love you!</div>
+</p><br />
+<p>
+
+二、字体样式：
+
+1️⃣：font-family:  设置文档类型。
+
+      属性值：具体的字体类型。（详细百度）
+
+例：<div style="font-family: STKaiti;">
+
+2️⃣： font-size:   设置字体大小。
+
+属性值:  px  em rem 百分比。
+
+例： div style="font-size: 36px;">好好学习,天天向上  Good good study,Day day up </div>
+
+3️⃣： font-weight:  设置字体粗细。
+
+       属性值:  lighter  normal(正常值)  bold   bolder 100 200 300 400 500 600 700 800 900 （其中 400 相当于normal, 700 相当于bold）
+
+例： <div style="font-weight: 900;">好好学习,天天向上  Good good study,Day day up </div> 
+
+4️⃣：font-style:   设置字体样式。
+
+      属性值: 
+                      normal             正常字体
+                     	italic                斜体
+
+                      oblique             字体倾斜
+
+例：<div style="font-style: oblique;">好好学习,天天向上  Good good study,Day day up 
+
+5️⃣：color:   设置字体颜色。
+
+属性值: 颜色单词 十六进制颜色（#.....） rgb rgba
+
+例： <div style="color: #f0f0f0;">好好学习,天天向上  Good good study,Day day up</div>
+</p><br />
+<p>
+三、背景样式：
+
+1️⃣： background-color:   设置背景颜色。
+
+属性值: 颜色单词 十六进制颜色（#.....）rgb rgba
+
+例： <div style="background-color: red; width: 300px; height: 300px";>
+
+2️⃣： background-repeat: 设置背景图片是否平铺。
+       属性值:
+                     repeat           平铺(默认值)
+                     no-repeat      不平铺
+                     repeeat-x      只在水平方向平铺
+
+                      repeeat-y     只在垂直方向平铺
+
+例： <div style="height: 300px; background-image: url(img/1.jpg); background-repeat:no-repeat;">撸起袖子加油干</div>
+
+3️⃣：ackground-posution: 设置图片的位置。
+      属性值: 
+                      left,right,top,bottom,center两两组合形成的(九个位置)
+                      x% y%(百分比)
+
+                       xpx ypx(像素值)
+
+例：<div style="height: 20px; background-image: url(img/1.jpg); background-repeat: no-repeat; background-position:center center"> 撸起袖子加油干!</div>
+
+4️⃣：background-attachment: 设置背景图片是否随内容滚动。
+
+       属性值:  
+
+                        fixed          背景不滚动
+
+                        scroll          背景图随内容滚动
+
+
+</p><br />
+<a href="#">返回顶部</a>
+		
+	</body>
+</html>

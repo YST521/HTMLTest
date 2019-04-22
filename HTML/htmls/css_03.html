@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子模型</title>
+		
+		<style type="text/css">
+			
+			div{
+        background-color:red;
+    }
+   span{
+        background-color:green;
+    }
+    
+    #box{
+    	font-size: 10px;
+    	 background-color:green;
+            margin:20px;
+            padding:20px;
+            border:solid 10px;
+            width:100px;
+            height:100px;
+
+    }
+    
+    .cs01{
+    	
+    	background-color:  red;
+    	width: 100px;
+    	height: 100px;
+    }
+    .cs01 div{
+    	background-color: yellow;
+    }
+    
+     .cs02{
+    	
+    	 	background-color:  green;
+    	 	    	width: 100px;
+    	height: 100px;
+    }
+    .cs02 div{
+    	 	background-color: yellow;
+    }
+    
+     .cs03{
+    	
+    	 	background-color:  red;
+    	 	    	width: 100px;
+    	height: 100px;
+    }
+    .cs03 div{
+    	 	background-color: yellow;
+    }
+    
+     .cs04{
+    	
+    	 	background-color:  green;
+    	 	    	width: 100px;
+    	height: 100px;
+    }
+    .cs04 div{
+    	 	background-color: yellow;
+    }
+    
+		</style>
+		
+	</head>
+	<body>
+		
+	 <div>div是块级元素</div>
+    <div>div是块级元素</div><br>
+    <span>span是内联元素</span>
+    <span>span是内联元素</span><br />
+    
+    <div id="box">盒模型  margin: 盒子外边距  padding: 盒子内边距  border  盒子边框宽度  content 盒子内容 width 盒子宽 height 盒子高</div>
+<br />
+
+<h4>.position 定位方式  2.定位left（左），right（右），top（上），bottom（下）</h4>
+<a href="https://blog.csdn.net/tswc_byy/article/details/81623461">布局相关的属性</a><br />
+
+<div  class="cs01">
+	<div>
+		1111111
+	</div>
+	
+</div><br />
+
+<div  class="cs02">
+	<div>
+	222222
+	</div>
+	
+</div><br />
+
+<div  class="cs03">
+	<div>
+		33333
+	</div>
+	
+</div><br />
+
+<div  class="cs04">
+	<div>
+		4444
+	</div>
+	
+</div>
+
+
+
+	</body>
+</html>
