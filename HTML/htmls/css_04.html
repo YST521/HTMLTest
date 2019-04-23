@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*布局前 清空布局*/
+			*{
+            padding:0px;
+            margin:0px;
+        }
+
+			
+			#div01{
+				background-color: red;
+			}
+			#sp01{
+				background-color:  green;
+				height:  100px;
+				width: 100px;
+			}
+			
+			#div02{
+				background-color: palevioletred;
+				display: inline;
+			}
+			#sp02{
+				background-color: orange;
+				display: block;
+				height:  100px;
+				width: 100px;
+			}
+			#div03{
+			background-color: red;
+			display: inline-block;
+			}
+			#sp03{
+				background-color: chartreuse;
+				/*display:inline-block;*/
+		float: left;   /* 行内标签转换成 行内块级标签*/
+		margin-right: 10px;
+					width: 150px;
+				height: 80px;
+			}
+			
+			#box{
+				width: 150px;
+				height: 150px;
+				background-color: red;
+			   border:solid 20px;   /*边框宽20*/
+				border-color: blue;
+				text-align: center;   /*文字左右居中*/
+				line-height: 150px;  /*文字垂直居中*/
+				
+				margin-left: 100px; /* 外边距 左边 距父视图 距离 还有 top bottom roght*/
+			/*	padding-right: 100px;*/   /*内边距 向右增加 accelerator: 100px;*/
+				
+			}
+			#hiddenTest{
+				width: 100px;
+				height: 100px;
+				background-color: chartreuse;
+				/*overflow 溢出处理*/
+				  overflow: hidden;  /*文字隐藏以后添加省略号*/
+			   overflow: auto;  /*文字隐藏以后添加省略号*/
+			  overflow: scroll;  /*文字隐藏以后添加省略号*/
+			}
+			
+			#postions{
+				background-color:green;
+            width:100px;
+            height:100px;
+            position:relative;
+            left:200px;
+            top:30px;
+     	/*overflow 溢出处理*/
+         /*overflow-x: hidden;
+        overflow-y: scroll;*/
+       overflow: auto;
+			}
+			
+			#qt01{
+					background-color:green;
+            width:150px;
+            height:150px;
+            position: relative;
+            left: 100px;
+            
+			}
+			
+			#qt11{
+				background-color:yellow;
+            width:50px;
+            height:50px;
+            position: absolute;  /*注意父类 要加  position: relative;*/
+            left: 80px;      /* 距离父视图的位置*/
+            top: 20px;
+				
+			}
+			/*根据浏览器窗口进行定位  fixed*/
+			#fixedS{
+			background-color:cyan;
+            width:180px;
+            height:180px;
+            position:fixed;
+            left:400px;
+            top:20px;
+
+			}
+			
+			#index1{
+            width:180px;
+            height:80px;
+            background-color:green;
+            position:relative;
+            left:10px;
+            top:10px;
+            color: black;
+            		   z-index: 1;
+          
+        }
+        #index2{
+            width:100px;
+            height:100px;
+            background-color:yellow;
+       position:fixed;
+            color:black;
+            top:400px;		
+            left:  600px;
+
+        }	
+#index2 div{
+	background-color:  red;
+	width: 50px;
+	height: 100px;
+}
+
+   .a{
+            width:180px;
+            height:80px;
+            background-color:green;
+            position:relative;
+            left:10px;
+            top:10px;
+            z-index:1;
+        }
+        .b{
+            width:100px;
+            height:100px;
+            background-color:yellow;
+            position:fixed;
+            color:#fff;
+            left: 400px;
+            top:500px;				
+        }
+
+#floatS{
+	background-color:  green;
+	width:  300px;
+	height:  300px;
+}
+#f1{
+	background-color:  yellow;
+	height: 100px;
+	width: 50px;
+	float: left;
+}
+	#f2{
+	background-color:  red;
+	height: 100px;
+	width: 50px;
+	float:  right;
+	/* clear:both;	*/
+}		
+		</style>
+		
+	</head>
+	<body>
+		<h3> 元素类型</h3><br />
+			<div id="div01"> div是块级元素 独占一行 可改变宽高</div>
+	<div id="div01"> div是块级元素</div>
+	<div id="div01"> div是块级元素</div>
+	<div id="div01"> div是块级元素</div><br />
+	
+	<span id="sp01"> span是行内标签 多个一行 不可改变宽高</span>
+	<span id="sp01"> span是行内标签</span><br /><br />
+	
+	
+	<div id="div02"> 块级标签转为行内标签</div>
+	<div id="div02"> div是块级元素</div>
+	<div id="div02"> div是块级元素</div>
+	<div id="div02"> div是块级元素</div><br />
+	
+	<span id="sp02"> 行内标签转为块级标签</span>
+	<span id="sp02"> span是行内标签</span><br />
+	
+		<div id="div03"> 块级标签 转为行内块级标签</div>
+	<div id="div03"> div是块级元素</div><br />
+	
+		<span id="sp03"> span是行内标签  转为行内块级标签</span>
+	<span id="sp03"> span是行内标签</span><br /><br />
+	
+	<!--<span id="sp03"> span是行内标签</span><br />
+	<span id="sp03"> span是行内标签</span><br />-->
+	
+	<!--转换的方式是用css的display属性
+display:block; /*转换为块级*/
+display:inline; /*转换为行内*/
+display:inline-block; /* 其实仍未行内元素，但是可以设置width及height属性等*/-->
+	
+	
+	<hr />
+	
+	<h3>盒子模型</h3>
+	<!--CSS css盒子模型 又称框模型 (Box Model) ，包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素-->
+	<div> 运行 在网页右键检查 或者审查元素 视图右侧 出现黄色框 分为 内容（content）、内边距（padding）、边框（border）、外边距（margin)</div>
+	<br />
+	<div id="box">盒子模型</div><br />
+	
+	<hr />
+	
+	<h3 > 定位</h3><br />
+<!--	overflow 溢出处理-->
+	<div id="hiddenTest">5645765786867897safrtyrtutyiuyiuyiouoiuopipioy</div>
+	<div id="postions">1.position 定位方式
+2.定位left（左），right（右），top（上），bottom（下）</div>
+	
+	<hr /><br />
+	
+	<h3> 嵌套</h3>
+	
+	<div id="qt01">
+		
+		<div id="qt11"></div>
+		
+	</div><br />
+	
+	<div id="fixedS">根据浏览器窗口进行定位  fixe 当拖动浏览器滚动条时在浏览器窗口中的位置不变</div><br />
+	
+	<hr />
+	
+	<h3>z-index 层覆盖先后顺序（优先级）</h3><br />
+	<div id="index1">index1</div>
+	<div id="index2">
+		index2
+	</div><br />
+	
+	<div class="a"></div>
+    <div class="b"></div><br />
+    
+    <hr />
+	
+	<h3>float 浮动</h3>
+	
+	<div id="floatS">
+		<div id="f1">浮动 left</div>
+		<div id="f2"> 浮动 right</div>
+		
+	</div>
+	
+		<!--转换的方式是用css的display属性
+display:block; /*转换为块级*/
+display:inline; /*转换为行内*/
+display:inline-block; /* 其实仍未行内元素，但是可以设置width及height属性等*/-->
+
+<!--块级元素：块级大多为结构性标记
+
+  <address>...</adderss>   
+  <center>...</center>  地址文字
+  <h1>...</h1>  标题一级
+  <h2>...</h2>  标题二级
+  <h3>...</h3>  标题三级
+  <h4>...</h4>  标题四级
+  <h5>...</h5>  标题五级
+  <h6>...</h6>  标题六级
+  <hr>  水平分割线
+  <p>...</p>  段落
+  <pre>...</pre>  预格式化
+  <blockquote>...</blockquote>  段落缩进   前后5个字符
+  <marquee>...</marquee>  滚动文本
+  <ul>...</ul>  无序列表
+  <ol>...</ol>  有序列表
+  <dl>...</dl>  定义列表
+  <table>...</table>  表格
+  <form>...</form>  表单
+  <div>...</div>
+
+行内元素：行内大多为描述性标记
+
+  <span>...</span>
+  <a>...</a>  链接
+  <br>  换行
+  <b>...</b>  加粗
+  <strong>...</strong>  加粗
+  <img >  图片
+  <sup>...</sup>  上标
+  <sub>...</sub>  下标
+  <i>...</i>  斜体
+  <em>...</em>  斜体
+  <del>...</del>  删除线
+  <u>...</u>  下划线
+  <input>...</input>  文本框
+  <textarea>...</textarea>  多行文本
+  <select>...</select>  下拉列表
+
+
+·块级元素
+
+  1.总是从新的一行开始
+  2.高度、宽度都是可控的
+  3.宽度没有设置时，默认为100%
+  4.块级元素中可以包含块级元素和行内元素
+  5.都有align属性
+  6.dispay都是block
+
+·行内元素
+
+  1.和其他元素都在一行
+  2.高度、宽度以及内边距都是不可控的
+  3.宽高就是内容的高度，不可以改变
+  4.行内元素只能行内元素，不能包含块级元素
+  5.没有align属性
+  6.display都是inline-->
+	
+
+		
+		
+		
+	</body>
+</html>

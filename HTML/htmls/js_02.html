@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取节点</title>
+	</head>
+	<body>
+		
+	<!--1.根据id获取元素
+
+document.getElementById("id属性的值");
+
+2.根据标签名字获取元素
+
+document.getElementsByTagName("标签的名字");
+
+3.根据name属性的值获取元素
+
+document.getElementsByName("name属性的值");
+
+4.根据类样式的名字获取元素 
+
+document.getElementsByClassName("类样式的名字");
+
+5.根据选择器获取元素 
+
+1.document.querySelector("选择器");
+
+2.document.querySelectorAll("选择器"); -->
+
+
+<div id = 'idM'>根据id获取元素</div>
+<div class="classM">根据class获取元素</div>
+<div  name  = 'nameM'>根据name名来拿</div>
+ <p>根据标签名来拿</p>
+ <div  type="button" value="显示效果1" id="btn">根据id选择器拿到标签 (点击一下) </div><br />
+  <div  type="button" value="显示效果2" class="btn">根据class选择器拿到标签 (点击一下)  </div><br />
+  <div id="six">666999666  (点击一下)</div>
+  
+ <!--<button  type="button" value="显示效果1" id="btn" >btn111111</button>
+ <button type="button" value="显示效果2" class="btn btn2222></button>-->
+ <!--<input type="button" value="显示效果1" id="btn"/><br />
+<input type="button" value="显示效果2" class="btn"/>-->
+
+<br />
+
+<button  id="btn1"> Change</button>
+<input  type="text" value="111" class="text"/><br/>
+<input    type="text" value="222" class="text"/><br />
+
+
+	<script>
+		
+	var divID = document.getElementById('idM');
+	divID.style.backgroundColor = 'red';
+	
+	var classD = document.getElementsByClassName('classM')[0];
+	classD.style.backgroundColor = 'orange';
+	
+	var nameD = document.getElementsByName('nameM')[0];
+	nameD.style.backgroundColor = 'green';
+	
+	var tagD = document.getElementsByTagName('p')[0];
+		tagD.style.backgroundColor = 'blue';
+		
+   var six = document.querySelector('#six');
+    six.onclick = function(){
+    	six.innerHTML = '用选择器拿去标签成功';
+    	six.style.backgroundColor = 'chartreuse';
+    };
+    
+    
+		
+		 var btnObj1 = document.querySelector("#btn");
+		 btnObj1.style.backgroundColor = '#FFFF00';
+    btnObj1.onclick = function () {
+//      alert("我变帅了");
+btnObj1 .style.backgroundColor = 'chartreuse';
+    };
+    var btnObj2 = document.querySelector(".btn");
+    		 btnObj2.style.backgroundColor = '#FFFF00';
+    btnObj2.onclick = function () {
+//      alert("哈哈,我又变帅了");
+btnObj2 .style.backgroundColor = 'purple';
+    };
+    
+    
+
+    
+
+	 //根据选择器的方式获取元素
+        var inputs = document.querySelectorAll(".text");	
+          inputs.value = '666';
+		 document.getElementById("btn1").onclick = function () {
+       
+ 
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = "更改input 值 成功";
+        }
+    };
+
+
+	</script>	
+		
+	</body>
+</html>

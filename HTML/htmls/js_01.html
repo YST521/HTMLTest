@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>1111</div><br />
+<!--		//disabled   禁用 input 元素-->
+<input type="text" disabled="disabled"><br />
+
+<!--//阻止超链接跳转
+-->
+<a href="https://www.baidu.com" onclick="return false">百度</a><br />
+
+<input type="button" value="按钮1" id="btn1">
+<input type="button" value="按钮2" id="btn2">
+	
+		
+		<script>
+			
+//			 console.log 打印  typeof打印元素类型
+			var a = 10;
+    var b = "bb";
+    console.log(typeof a);
+    console.log(typeof b);
+
+	//类型转换	
+	var a = "12";
+    var b = "a12";
+    var c = "12";
+    var d = "1";
+      var e = "0";
+    console.log(parseInt(a));
+    console.log(parseFloat(b));
+    console.log(Number(c));
+    console.log(Boolean(d));
+    console.log(Boolean(e));
+    
+//  undefined  未定义
+ var n;
+    console.log(n);
+    
+    var age = prompt("请输入年龄");
+    console.log(age);
+    
+     document.write("hello");
+    document.write("<div>乘风破浪会有时，直挂云帆济沧海！</div>");
+    
+//  数组
+    var arr1 = [];
+    var arr2 = new Array();
+     var arr3 = [1,'2',['3','4',5]];
+     
+//    arguments 伪数组
+     function f1() {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            sum = sum + arguments[i];
+        }
+        return sum;
+    };
+    //可以自动获取参数的值和个数
+    console.log(f1(10, 20, 30));
+    console.log(f1(10, 20, 30, 40, 50));
+    
+    
+//  instanceof  判断对象类型
+    var date = new Date();
+    var arr = new Array();
+        console.log(date );
+    console.log(date instanceof Date);
+    console.log(arr instanceof Array);
+    console.log(date instanceof Array);
+    console.log(arr instanceof Date)
+
+//confirm   确定及取消按钮的对话框
+var flag = confirm("是否继续");
+
+//window.onload 页面加载完毕调用
+window.onload = function () {
+    
+            alert("页面加载完毕了！");
+        
+    };
+    
+//  bind(对象)  改变函数执行时this的指向
+     document.getElementById("btn1").onclick = function () {
+        console.log(this.id);//btn2
+        alert(this.id);
+    }.bind(document.getElementById("btn2"));
+    
+    
+    //创建对像 
+//  工厂模式创建对象
+    var pop = function (name, age) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.laugh = function () {
+            console.log("笑");
+        };
+        obj.cry = function () {
+            console.log("哭");
+        };
+        return obj;
+    }
+    var pop1 = pop("小明", 20);
+    var pop2 = pop("小刚", 30);
+    console.log(pop1.name);
+    pop2.cry();
+//自定义构造函数创建对象
+function Person(name, age) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.laugh = function () {
+            console.log("笑");
+        };
+        obj.cry = function () {
+            console.log("哭");
+        };
+        return obj;
+    }
+    var P1 = Person("小明", 20);
+    var P2 = Person("小刚", 30);
+    console.log(P1.name);
+    P2.cry();
+
+//字面量方式创建对象
+   var obj = {
+        name: "小明",  
+        age: 20,
+        laugh: function () {
+            console.log("笑");
+        },
+        cry: function () {
+            console.log("哭");
+        }
+    };
+    console.log(obj.name);
+    obj.cry();
+
+//JSON格式的数据
+//创建对象
+    var obj = {
+        "name": "小明",
+        "age": "20",
+        "sex": "男"
+    };
+    //遍历对象的属性
+    for (var key in obj) {
+        //对象中确实有这个属性，用  对象.属性名字  或  对象[属性名字]
+        //对象中没有这个属性，用  对象[属性名字]
+        console.log(key + "====" + obj[key]);
+    }
+    console.log(obj.key ,obj.value);
+
+
+		</script>
+	</body>
+</html>

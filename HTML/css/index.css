@@ -1,0 +1,74 @@
+
+			
+				/*清空所有布局防止干扰*/
+			*{
+				margin:0;
+				padding:0;
+			}
+				/*body {
+				margin: 0;
+				overflow: hidden;
+			}*/
+			
+			
+			h2{
+				padding-top: 10px;
+					padding-left: 100px;
+				color: white;
+			}
+			#learn{
+					padding-top: 10px;
+					padding-left: 0;
+				color: white;
+			}
+			
+			canvas{
+	
+				display:block;
+				background:#000;
+				 style="position:absolute;z-index:-2";
+		
+			}
+			
+			img{
+			width: 100px;
+			height: 100px;
+		}
+		
+		#directory {
+			
+			padding: 0;
+			padding-left: 0px;
+			margin: 0;
+			color: white;
+			font-size: 25px;
+		}
+	
+		a{
+		padding-left: 100px;
+			color:  white;
+			font-size: 20px;
+		}
+		 div{
+			padding-left: 100px;
+			color:  white;
+			font-size: 20px;
+		}
+		
+		h5 {
+	padding-left: 100px;
+			color:  white;
+			font-size: 20px;
+		}
+		
+	 h4{
+	 	padding-left: 100px;
+	 	color:  white;
+	 }
+	 
+	 p{
+	 	 	padding-left: 100px;
+	 	 	font-size: 20px;
+	 	color:  white;
+	 }
+	 
