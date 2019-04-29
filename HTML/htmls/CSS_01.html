@@ -10,10 +10,10 @@
 		<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
 		<!--b, 通过 import 引入-->
 
-	<!--	<link rel="stylesheet" href="../css/CSS_01.css" />-->
+		<link rel="stylesheet" href="../css/CSS_01.css" />
 		<style type="text/css">
 			
-			@import url("../css/CSS_01.css");
+		/*	@import url("../css/CSS_01.css");*/
 			
 			body{
 			/*	background-image: url(../img/bg1.png);*/
@@ -38,7 +38,40 @@
 		
 	</head>
 	<body>
-		<a href="https://blog.csdn.net/LuoLuoYan123/article/details/81042813">文字样式</a>
+		<a href="https://blog.csdn.net/LuoLuoYan123/article/details/81042813">文字样式</a><br /><br />
+		<div>本博客所有内容均来自网络博客 和 一些视频 </div><br />
+				<div> 
+	<p>4.1 颜色的表示方式
+a. rgb 模式 r 红色 g 绿色 b 蓝色 红绿蓝三原色可以组成n多颜色 rgb取值范围（0-255） 
+b. 直接写颜色的名称
+c. 十六进制 #9f0000 （最常用）
+d. rgba(红色，绿，蓝，透明度) a的取值范围0-1 0表示完全透明 1 表示不透明</p>
+	<p>4.2 边框相关的属性
+border-width 边框的宽度
+border-style 边框风格
+border-color 边框颜色  border：1px solid red； 简写形式
+border-left 左边 border-right 右边 border-bottom 下边 border-top
+border-radius 边框圆角</p>
+	<p>4.3 背景相关的属性
+background-color 背景颜色
+background-image 背景图片
+background-repeat 是否重复
+background-position 背景位置</p>
+	<p>4.4 字体相关属性
+font-size: 80px;
+/*设置字体颜色*/
+color: red;
+/*字体加粗*/
+/*font-weight: bold;*/
+/*定义字体类型*/
+font-family："微软雅黑"，serif;</p>
+<p>4.5 文本相关属性
+text-align
+text-indent
+letter-spacing
+line-height</p>
+
+</div><br />
 		<p></p>
 		<img src="../img/cssbox.png" /><br />
 		<img style="width: 1200px ; height: 800px;" src="../img/htmlTEXT.png" />
@@ -48,6 +81,8 @@
 		<div style="text-decoration:line-through;">
 		我是我
 	</div><br />
+	<br />
+	<div id="sassTest"></div>
 	
 	<hr />
 	 <div id="title">外部样式</div><br />
@@ -72,7 +107,9 @@
 
 <!--text-indent: 首行缩进 	属性值: px em rem 百分比  注:文字的默认字体大小 16px  1em = 16px
 -->
-	<div style="text-indent:2em ;">这是CSS练习......</div><br />
+	<div style="text-indent:2em ;">这是CaSS练习.</div><br />
+	<div class="selected">这是CASS练习引用练习</div><br />
+	<a href="https://www.cnblogs.com/qingchunshiguang/p/8119727.html">SACC待研究？</a><br />
 
 		<!--text-align: 设置文本对齐方式
 		属性值:

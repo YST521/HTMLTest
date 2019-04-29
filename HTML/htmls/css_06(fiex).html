@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			.box{
+			/*	 display: -webkit-flex; */  /*在webkit内核的浏览器上使用要加前缀*/
+    /*display: flex;   */             /*//将对象作为弹性伸缩盒显示*/
+    
+    /* ----------*/
+				   display: inline-flex;     /* //将对象作为内联块级弹性伸缩盒显示*/
+		  /* ----------*/
+/*		 overflow: hidden;*/     /*隐藏超处元素部分*/
+		 
+		 /*设置在容器上的属性有6种。
+
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-item
+align-content	*/
+			
+			align-self: auto | flex-start | flex-end | center | baseline | stretch;
+			
+				background-color:  green;
+				width: 200px;
+				height: 200px;
+			}
+			
+			.box1{
+
+		    display: inline-flex;     /* //将对象作为内联块级弹性伸缩盒显示*/
+
+		/*align-items属性：定义在交叉轴上的对齐方式*/
+/*		 align-items: flex-start; */  /*  起点对齐；*/
+		align-items: flex-end;   /*终点对齐；*/
+	/*	 align-items: center ;*/
+			
+				background-color:  green;
+				width: 200px;
+				height: 200px;
+			}
+			
+		.box2{
+
+		    display: inline-flex;     /* //将对象作为内联块级弹性伸缩盒显示*/
+
+		/*align-items属性：定义在交叉轴上的对齐方式*/
+/*		 align-items: flex-start; */  /*  起点对齐；*/
+	/*	align-items: flex-end; */  /*终点对齐；*/
+   	      align-items: center ;
+			
+				background-color:  green;
+				width: 200px;
+				height: 200px;
+			}
+		
+				.box3{
+
+		    display: inline-flex;     /* //将对象作为内联块级弹性伸缩盒显示*/
+
+		/*align-items属性：定义在交叉轴上的对齐方式*/
+/*		 align-items: flex-start; */  /*  起点对齐；*/
+	/*	align-items: flex-end; */  /*终点对齐；*/
+   	 /*     align-items:baseline;*/
+			 align-items:stretch;   /*默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度*/
+				background-color:  green;
+				width: 200px;
+				height: 200px;
+			}
+			/*#dd33{
+				  align-items: 	stretch;
+				  
+			}*/
+		
+				
+			
+			div{
+				background-color:  red;
+				width: 40px;
+				height: 40px;
+			}
+			#dd1{
+				width: 100px;
+				background-color:  yellow;
+				height: 100px;
+			}
+			
+			
+				#dd2{
+				width: 100px;
+				background-color:  yellow;
+				height: 150px;
+			}
+		/*css*/
+		
+		/* ul li以横排显示 */
+
+/* 所有class为menu的div中的ul样式 */
+.menu{
+	 background-color:  #BFCBD6;
+	 width: 400px;
+	 height: 150px;
+}
+.menu ul
+{
+    list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    padding: 0px; /* 与内部元素的距离为0 */
+    width: auto; /* 宽度根据元素内容调整 */
+  
+}
+/* 所有class为menu的div中的ul中的li样式 */
+.menu ul li
+{
+	
+	margin-right: 1.5px;
+      float:left; /* 向左漂移，将竖排变为横排 */
+}
+
+
+/* 所有class为menu的div中的ul中的a样式(包括尚未点击的和点击过的样式) */
+.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71; /* 背景色 */
+    border: 1px #4e667d solid; /* 边框 */
+    color: #dde4ec; /* 文字颜色 */
+    display: block;    /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    line-height: 1.35em; /* 行高 */
+    padding: 4px 20px; /* 内部填充的距离 */
+    text-decoration: none; /* 不显示超链接下划线 */
+    white-space: nowrap; /* 对于文本内的空白处，不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标移动到元素中的样式) */
+.menu ul li a:hover
+{
+    background-color: #bfcbd6; /* 背景色 */
+    color: #465c71; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+.menu ul li a:active
+{
+    background-color: #465c71; /* 背景色 */
+    color: #cfdbe6; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+			
+	</style>
+		
+		
+	</head>
+	<body>
+		<a href="https://www.cnblogs.com/qingchunshiguang/p/8034752.html" target="_blank">用ul、li做横向导航</a>
+		<p></p>
+		<br />
+		
+		<hr />
+		<p></p>
+		<p></p>
+		
+		<div class="menu">
+        <ul id="uul">
+            <li><a href="javascript:void(0);">主页</a></li>
+            <li><a href="javascript:void(0);">工作日志</a></li>
+            <li><a href="javascript:void(0);">设备运行记录</a></li>
+            <li><a href="javascript:void(0);">其他</a></li>
+        </ul>
+    </div>
+    
+    
+		<p></p>
+		<p></p>
+		
+		
+		<hr />
+		
+		
+		<a href="https://www.cnblogs.com/qingchunshiguang/p/8011103.html" target="_blank" > fiex</a><br />
+		<div class="box">
+			<div>111111</div>
+				<div id="dd1">111111</div>
+					<div>111111</div>
+						<div id="dd2">111111</div>
+		                	<div>111111</div>
+					
+		</div><br />
+		<p></p>
+		
+			<div class="box1">
+			<div>111111</div>
+				<div id="dd1">111111</div>
+					<div>111111</div>
+						<div id="dd2">111111</div>
+		                	<div>111111</div>
+					
+		</div><br />
+		<p></p>
+		
+				<div class="box2">
+			<div>111111</div>
+				<div id="dd1">111111</div>
+					<div>111111</div>
+						<div id="dd2">111111</div>
+		                	<div>111111</div>
+					
+		</div><br />
+		<p></p>
+		
+				<div class="box3">
+			<div>111111</div>
+				<div id="dd33">111111</div>
+					<div>111111</div>
+						<div id="dd2">111111</div>
+		                	<div>111111</div>
+					
+		</div><br />
+		<p></p>
+		
+
+		
+	</body>
+</html>

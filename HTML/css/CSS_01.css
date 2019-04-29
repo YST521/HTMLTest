@@ -1,4 +1,10 @@
 
+/*跟原生的css不同，sass允许@import命令写在css规则内。这种导入方式下，生成对应的css文件时，局部文件会被直接插入到css规则内导入它的地方。*/
+/* .index*/
+/*@import url("index.cass");*/
+/*.blue-theme {@import "index.sass"}*/
+@import  'indexS.css';
+
 #title{
 	font-size: 20px;
 }
@@ -15,4 +21,13 @@
 	width: 200px;
 	height: 100px;
 	background: linear-gradient(red,yellow);
+}
+
+#sassTest{
+color:  #bgColor;
+	aside{
+		color: #FF0000;
+	background-color: #content1;
+}
+
 }

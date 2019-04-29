@@ -143,10 +143,45 @@ div , p{
        /*background-size: 100% 100%;*/
        }
        
+       #bor{
+    
+      /*  border: 20px solid red; */  /*上下左右下上都20*/
+    
+      width:100px;
+  height:100px;
+  background:yellow;
+  border-top: 20px solid red;
+  border-right:20px solid black;
+  border-bottom:20px solid green;
+  border-left:20px solid blue;
+
+  
+       }
+         #bor1{
+      width:0px;
+  height:0px;
+  background:yellow;
+  border-top: 50px solid red;
+  border-right:50px solid black;
+  border-bottom:50px solid green;
+  border-left:50px solid blue;
+  
+  
+  /*width:100px;
+  height:100px;
+  background:yellow;
+  border-top: 100px solid red;
+  border-right:100px solid black;
+  border-bottom:100px solid green;
+  border-left:100px solid blue;*/
+  
+       }
+       
 		</style>
 		
 	</head>
 	<body>
+		
 		<a href="https://www.cnblogs.com/qingchunshiguang/p/8011103.html">布局相关</a><br />
 		<a href="http://www.runoob.com/css/css-boxmodel.html">Margin(外边距) - 清除边框外的区域，外边距是透明的。
 Border(边框) - 围绕在内边距和内容外的边框。
@@ -169,8 +204,10 @@ Content(内容) - 盒子的内容，显示文本和图像。
  
  <h4>伪类</h4>
   <!--target="_blank" 另外重开页面打开链接    target="_self"   当前页面打开链接--> 
- <a class="weilei" href="http://www.baidu.com " target="_blank">百度</a><br />
+ <a class="weilei" href="http://www.baidu.com " target="_blank">百度</a><br /><br />
  
+ <div id="bor"></div>
+  <div id="bor1"></div>
  
  <div class="son">
  	<p>66666666666</p>
@@ -339,6 +376,7 @@ fixed: 静止的
 	<div> class选择器  class = @"" ：.标签名</div>
  	<div> 群组选择器。将 选择器组合起来 中间逗号分开  p.oneDiv,#twoDiv,div{ } </div><br />
  	
+ 	
  	<div style="font-size: 20px; color: red;">2 层次选择器</div><br />
  	<div>
  		<p>后代选择器</p>
@@ -415,6 +453,8 @@ link ,visited,hover,active四个伪类选择器(四个状态)
 			     4,active 鼠标按下 没有 抬起时的状态     
 		-->
 		<a id="weilei" href="http://www.baidu.com">百度一下,你就知道</a><br />
+		
+
 
   <input /><br />
   <input id="inp" /><br />
