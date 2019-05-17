@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jq</title>
+		<style>
+			#time{
+				width: 300px;
+				background-color: greenyellow;
+                color:  red;		
+                text-align: center;
+                font-size: 25px;
+	}
+		</style>
+	</head>
+	<body>
+		<div id="time"> 当前时间</div><br />
+		
+		<div id="dian">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div><br />
+
+		
+		<a target="_blank" href="https://blog.csdn.net/tswc_byy/article/details/86700543">jq中的ajax</a><br />
+	<p>jQuery中的多库共存</p>
+	<p>$ 可以用   jQuery替换</p>
+	<p>var $1 = $.noConflict();//释放$的控制权,并且把$的能力给了$1
+  用这种方式$符号就会失效</p>
+		<input type="button" value="按钮" id="btn"><br />
+		<input type="button" value="按钮" id="btn1"><br />
+			<button id="btn2">点击</button><br />
+
+		
+		<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+		<script >
+			
+			
+ //jQuery中的多库共存
+// $ 可以用   jQuery替换
+//var $1 = $.noConflict();//释放$的控制权,并且把$的能力给了$1
+//用这种方式$符号就会失效
+
+
+ jQuery(function () {
+        jQuery("#btn").click(function () {
+            console.log("按钮被点击了")
+            alert("按钮被点击了");
+        });
+    });
+    
+ var $1 = $.noConflict();
+    $1(function () {
+
+        $1("#btn1").click(function () {
+            console.log("按钮被点击了")
+             alert("按钮被点击了");
+        });
+    });
+
+			
+	// 获取当前时间		
+			//判断是否在前面加0
+function getNow(s) {
+return s < 10 ? '0' + s: s;
+}
+
+var myDate = new Date();             
+
+var year=myDate.getFullYear();        //获取当前年
+var month=myDate.getMonth()+1;   //获取当前月
+var date=myDate.getDate();            //获取当前日
+
+
+var h=myDate.getHours();              //获取当前小时数(0-23)
+var m=myDate.getMinutes();          //获取当前分钟数(0-59)
+var s=myDate.getSeconds();
+
+var now=year+'-'+getNow(month)+"-"+getNow(date)+" "+getNow(h)+':'+getNow(m)+":"+getNow(s);
+			
+//		alert(now);	
+//console.log(now);
+ $('#time').text(now);
+ 
+
+$(".banner").Banner({
+child:'li',    //包含图片的父级标签,默认li
+time:'3000',    //轮播间隔时间
+direction:"right",    //轮播方向，目前仅支持left和right
+choose:'false',    //是否支持触摸小点的轮播触摸事件,默认false。
+chooseId:'id',    //小点外部父级标签ID。仅限choose开关打开。
+chooseActive:'red',    //支持小点的选中状态classname。仅限choose开关打开。
+preId:'pre',    //向前翻页的按钮id
+nextId:'next'    //向后翻页的按钮id
+});
+ 
+			
+		</script>
+		
+	</body>
+</html>

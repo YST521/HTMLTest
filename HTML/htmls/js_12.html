@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<body>
+<input type="button" value="开始" id="btn1">
+<input type="button" value="停止" id="btn2">
+<script>
+    var timeId;
+    document.getElementById("btn1").onclick = function () {
+        function f1() {
+            console.log("定时器执行了");
+             console.log(timeId);
+        };
+        //会在5秒后执行，每5秒执行一次
+        timeId = setInterval(f1, 1000);
+       
+    };
+    document.getElementById("btn2").onclick = function () {
+        //如果点击，定时器直接被清理，不会继续执行
+        clearInterval(timeId);
+        console.log("定时器被清理了");
+    };
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<title>js点击事件</title><br />
+		
+		<style>
+				#mouse0{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				
+			}
+			
+			#mouse{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				
+			}
+			
+				#mouse1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				cursor: pointer;
+			}
+			
+			#div1 {
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            overflow: auto;
+        }
+		
+			#div2{
+            width: 100px;
+            height: 30px;
+            background-color: red;
+            overflow: auto;
+        }
+        
+        		
+			#div3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            overflow: auto;
+        }
+		
+		
+        	#ipt6{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            overflow: auto;
+        }
+        	
+		</style>
+		
+	</head>
+	<body>
+			<p></p>
+			<p></p>
+			<p></p>
+						
+		<button id="clickAction"> 鼠标点击事件</button><br />
+		<p></p>
+			<div id="mouse0">鼠标的事件</div>
+			<p></p>
+		<div id="mouse">鼠标的事件</div><p></p>
+		<div id="mouse1">
+			<a target="_blank"  href="https://www.cnblogs.com/hanqishihu/p/5805566.html">鼠标箭头形状</a><br />
+			<button id="cursorBtn">改变鼠标形状</button>
+		</div><p></p>
+		<input id="ipt1" autofocus="autofocus  value="获取焦点与失去焦点" /><br />
+		<p></p>
+		<input id="ipt2" value="获取焦点与失去焦点" /><br />
+		<p></p>
+		<p></p>
+		<input id="ipt3" value="888"/>
+			<p></p>
+		<p></p>
+		<div id="div1"> 滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件滚动事件</div>
+			<p></p>
+		<div id="div2"> </div>
+		<p></p>
+<input type="text" id="ipt6">
+		<p></p>
+		
+				<p></p>
+<div id="div3">鼠标按下或抬起 </div>
+		<p></p>
+		
+		
+		<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			
+						$('#clickAction').click(function (){
+				alert('我是button的点击事件');
+				
+			});
+			
+
+			 $("#mouse0").mouseover(function(){
+            this.style.background="green";
+          $(this). text('鼠标进入div');
+         
+       });
+       
+       	 $("#mouse").mousemove(function(){
+        this.style.background="yellow";
+           $(this). text('鼠标在div上移动');
+         
+       });
+       
+      	 $("#mouse").mouseout(function(){
+        this.style.background="cyan";
+         $(this).css("background","#588600");
+         $(this). text('鼠标移出 div');
+       });
+       
+       $('#cursorBtn').click(function(){
+       	$('#mouse1').css("cursor","crosshair");
+       	$(this).text('成功将小手鼠标改为十子架');
+       });
+       
+//     	   $('#div1').onscroll(function(){
+//     	 console.log("滚动条被拖动了");
+//     alert('666');
+//     });
+//     
+       
+   document.getElementById("ipt3").onfocus = function () {
+        document.getElementById("ipt3").value = "";
+    };
+    
+      document.getElementById("ipt3").onblur = function () {
+        document.getElementById("ipt3").value = "6666";
+    };
+    
+    
+    document.getElementById("div1").onscroll = function () {
+        console.log("滚动条被拖动了");
+        $(this).text('滚动条被拖动了滚动条被拖动了滚动条被拖动了滚动条被拖动了滚动条被拖动了滚动条被拖动了滚动条被拖动了滚动条被拖动了');
+    };
+
+
+// document.getElementById("scrollC").onscroll = function () {
+//      console.log("滚动条被拖动了");
+//      alert("滚动条被拖动了");
+//  };
+//  
+
+document.getElementById("ipt6").onkeydown = function () {
+//  alert("键盘按下了");
+    $('#div2').text('键盘按下了');
+    };
+    document.getElementById("ipt6").onkeyup = function () {
+//   alert("键盘抬起了");qqqqq
+       $('#div2').text('键盘抬起了');
+    };
+
+//1.keyCode  获取按下的是哪个按键 
+document.onkeydown = function (e) {
+        //console.log(e.keyCode);//事件参数对象
+    
+        
+        switch (e.keyCode) {
+            case 81:
+                console.log("您按下的是Q");
+                    alert("键盘按下了Q ");
+                break;
+            case 87:
+                console.log("您按下的是W");
+                   alert("键盘按下了w ");
+                break;
+            case 69:
+                console.log("您按下的是E");
+                       alert("键盘按下了e");
+                break;
+            case 82:
+                console.log("您按下的是R");
+                   alert("键盘按下了r");
+                break;
+        }
+    };
+
+document.getElementById("div3").onmousedown = function () {
+        console.log("鼠标按下了");
+        $(this).text('鼠标按下了');
+          this.backgroundColor = 'yellow';
+    };
+    document.getElementById("div3").onmouseup = function () {
+        console.log("鼠标抬起了");
+              $(this).text('鼠标抬起了');
+              this.backgroundColor = 'blue';
+    };
+
+    
+    
+//1.onclick()  鼠标左键单击事件
+//2.onmouseover  鼠标进入事件
+//3.onmouseout  鼠标离开事件
+//4.onfocus  获取焦点事件
+//5.onblur  失去焦点事件
+//6	onfocus  获取焦点事件
+//7  onblur  失去焦点事件
+//8. onkeydown / onkeyup  键盘按下/抬起事件
+//9. onmousedown / onmouseup  鼠标按下/抬起事件
+
+ 
+		</script>
+		
+	</body>
+</html>

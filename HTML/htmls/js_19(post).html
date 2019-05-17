@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+		<script>
+			
+//			$.ajax({
+//  type: 'post',
+//  dataType: 'json',
+//  url: 'http://localhost:8081/index',
+//  data: {
+//      name: 'zhang',
+//      gongzi: '20000'
+//  },
+//  success: function (data) {
+//      console.log(data);
+//  },
+//  error: function (data) {
+//      console.log(data);
+//  }
+//})
+
+$.ajax({
+    type: 'get',
+    dataType: 'text',
+    url: 'http://127.0.0.1:3000/?url=123&name=321',
+    data: {
+        name: 'zhang',
+        gongzi: '20000'
+    },
+    success: function (data) {
+        console.log(data);
+    },
+    error: function (data) {
+        console.log(data);
+    }
+})
+
+
+
+
+		</script>
+	</body>
+</html>

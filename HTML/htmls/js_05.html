@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>鼠标移动 div内容滚动 - 学无止尽 iKeepStudying.com</title>  
+<meta name="keywords" content="鼠标移动 div内容滚动">  
+<meta name="description" content="鼠标移动 div内容滚动">  
+<script type="text/javascript" src="http://sources.ikeepstudying.com/js/jquery-1.8.3.min.js"></script>  
+</head>  
+  
+<body>  
+      
+    <div style="width:1000px;margin:24px auto;">  
+        <h1>1. 横向滚动 1 Horizontal Scrolling</h1>  
+        <style>  
+            .thumbs-block {  
+                position:relative; /**/  
+                overflow: hidden;  
+                background: #ccc;  
+                margin: 0 5px;  
+                width: 714px;  
+                height:142px;      /**/  
+            }   
+            .thumbs-block .thumbs {  
+                white-space: nowrap;  
+                text-align: center;  
+            }  
+            .thumbs-block .thumb {  
+                display: inline-block;  
+                padding: 5px;  
+                margin: 5px;  
+                background: rgba(0, 0, 0, 0.2);  
+                border: 1px solid #ccc;  
+                border: 1px solid rgba(0, 0, 0, 0.3);  
+                height: 120px;  
+                -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  
+                -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  
+            }  
+              
+            .thumbs{  
+              position:absolute;  /**/  
+              margin-left:0;      /**/  
+            }  
+        </style>  
+        <script>  
+            $(function()  
+            {  
+                var $bl    = $(".thumbs-block"),  
+                    $th    = $(".thumbs"),  
+                    blW    = $bl.outerWidth(),  
+                    blSW   = $bl[0].scrollWidth,  
+                    wDiff  = (blSW/blW)-1,  // widths difference ratio  
+                    mPadd  = 60,  // Mousemove Padding  
+                    damp   = 20,  // Mousemove response softness  
+                    mX     = 0,   // Real mouse position  
+                    mX2    = 0,   // Modified mouse position  
+                    posX   = 0,  
+                    mmAA   = blW-(mPadd*2), // The mousemove available area  
+                    mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio  
+              
+                $bl.mousemove(function(e) {  
+                    mX = e.pageX - this.offsetLeft;  
+                    mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;  
+                });  
+              
+                setInterval(function(){  
+                    posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"      
+                    $th.css({marginLeft: -posX*wDiff });  
+                }, 10);  
+              
+            });  
+        </script>  
+        This one will have 60px "mousemove padding" at each side:  
+        <div class="thumbs-block">  
+            <div class="thumbs">  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+                <a href="#" rel="group" class="fancybox thumb"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" width="120" height="120" /></a>  
+            </div>  
+        </div><br>  
+        来源： <a href="http://jsbin.com/uninug/3/edit">http://jsbin.com/uninug/3/edit</a><br><br>  
+          
+        <h1>2. 横向滚动 2 Horizontal Scrolling</h1>  
+          
+        <style>  
+            #parent{  
+              position:relative;  
+              margin:0 auto;  
+              height: 260px;  
+              width: 100%;  
+              background: #ddd;  
+            }  
+            #propertyThumbnails{  
+              position:relative;  
+              overflow:hidden;  
+              background:#444;  
+              width:100%;  
+              height:262px;  
+              white-space:nowrap;  
+            }  
+            #propertyThumbnails img{  
+              vertical-align: middle;  
+              height: 260px;  
+              display:inline;  
+              margin-left:-4px;  
+            }     
+        </style>  
+        <script>  
+            $(function()  
+            {  
+                $(window).load(function()  
+                {  
+                    var $gal   = $("#propertyThumbnails"),  
+                        galW   = $gal.outerWidth(true),  
+                        galSW  = $gal[0].scrollWidth,  
+                        wDiff  = (galSW/galW)-1,  // widths difference ratio  
+                        mPadd  = 60,  // Mousemove Padding  
+                        damp   = 20,  // Mousemove response softness  
+                        mX     = 0,   // Real mouse position  
+                        mX2    = 0,   // Modified mouse position  
+                        posX   = 0,  
+                        mmAA   = galW-(mPadd*2), // The mousemove available area  
+                        mmAAr  = (galW/mmAA);    // get available mousemove fidderence ratio  
+              
+                    $gal.mousemove(function(e) {  
+                        mX = e.pageX - $(this).parent().offset().left - this.offsetLeft;  
+                        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;  
+                    });  
+              
+                    setInterval(function(){  
+                        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"      
+                        $gal.scrollLeft(posX*wDiff);  
+                    }, 10);  
+                  
+                });  
+            });  
+        </script>  
+        <div id="parent">  
+            <div id="propertyThumbnails">  
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" />  
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" />  
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" />  
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" />  
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1922740179,1840515713&fm=27&gp=0.jpg" />  
+            </div>  
+        </div><br>  
+        来源： <a href="http://jsbin.com/alokat/1/edit">http://jsbin.com/alokat/1/edit</a><br><br>  
+          
+        <h1>3. 纵向滚动  Vertical Scrolling</h1>  
+        <style>  
+            .box {  
+                width:300px;  
+                height:300px;  
+                overflow-y:hidden;  
+                background:#eee;  
+                border:1px #ccc solid;  
+                overflow:hidden;  
+            }  
+            .box p {  
+                margin:1em;  
+            }  
+        </style>  
+        <script>  
+            $(document).ready(function()   
+            {  
+                $(".box").mousemove(function(e){  
+                    var h = $('#innerbox').height()+13;  
+                    var offset = $($(this)).offset();  
+                    var position = (e.pageY-offset.top)/$(this).height();  
+                    $(".status").html('Percentage:' + ((e.pageY-offset.top)/$(this).height()).toFixed(2));  
+                    if(position<0.33) $(this).stop().animate({ scrollTop: 0 }, 5000);  
+                    else if(position>0.66) $(this).stop().animate({ scrollTop: h }, 5000);  
+                    else $(this).stop();  
+                });  
+            });  
+        </script>  
+        <div class="box">  
+            <div id="innerbox" style="height:auto;">  
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor volutpat elementum. Nunc enim enim, eleifend sit amet blandit a, vestibulum a purus. Phasellus at accumsan ante. Duis vestibulum rhoncus sapien a dapibus. Suspendisse malesuada aliquet faucibus. Vestibulum ut sem diam. Integer tempus pellentesque mi, et luctus nunc porttitor in. Nunc vel risus in mauris facilisis commodo.</p>  
+                  
+                <p>Etiam gravida accumsan tortor, vitae malesuada est volutpat at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Nunc mattis dapibus odio nec bibendum. Aliquam id lorem tellus, eget venenatis tellus. Aliquam quis eros arcu. Nam massa dui, scelerisque eu tempor a, faucibus ac ligula. Praesent gravida tempus magna, eu hendrerit nibh placerat tincidunt. Nulla eleifend semper ligula. Nulla vitae adipiscing orci.</p>  
+                  
+                <p>Pellentesque eu lorem vitae leo congue egestas eu et risus. Praesent laoreet odio eget urna bibendum id pharetra dolor placerat. Mauris molestie venenatis est. Nunc eu dictum risus. Morbi sodales laoreet dapibus. Duis euismod condimentum massa, fringilla sodales mauris feugiat sed. In in iaculis diam.</p>  
+                  
+                <p>Donec velit magna, dignissim ac lobortis pharetra, laoreet a quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vitae quam ante. Fusce mi sapien, suscipit sed feugiat non, suscipit hendrerit neque. Maecenas elementum vestibulum bibendum. Curabitur nisl mauris, posuere cursus vestibulum sit amet, suscipit ac ligula. Nulla dolor tortor, lacinia vel mattis et, egestas tristique augue. Quisque at nibh tortor.</p>  
+                  
+                <p>In hac habitasse platea dictumst. Donec ullamcorper nisl sed leo porta euismod. Maecenas gravida scelerisque lobortis. In hac habitasse platea dictumst. Cras iaculis, justo vel aliquet faucibus, odio leo sollicitudin tellus, a sodales odio purus nec felis. In massa orci, euismod nec gravida vitae, pulvinar sit amet nulla. Integer in lorem lectus, eget dignissim ante.</p>  
+            </div>  
+        </div>  
+        <div class="status"></div><br>  
+        来源： <a href="http://jsfiddle.net/n3Q9j/5/">http://jsfiddle.net/n3Q9j/5/</a>  
+    </div>  
+</body>  
+</html>  

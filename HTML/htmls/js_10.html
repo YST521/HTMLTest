@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			 #dv1 {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2 {
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+        #dv3 {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+
+			
+		</style>
+	</head>
+	<body>
+		<a target="_blank" href="https://blog.csdn.net/tswc_byy/article/details/82824798">事件绑定</a><br />
+		<input type="button" value="按钮" id="btn"/><br />
+		<input type="button" value="按钮" id="btn1"/>
+<div id="dv"></div>
+<p></p>
+
+<input type="button" value="按钮" id="btn2"/><br />
+<div id="dv"></div>
+
+<input type="button" value="按钮" id="btn3"/><br />
+
+
+
+
+<div id="dv1">
+    <div id="dv2">
+        <div id="dv3"></div>
+    </div>
+</div>
+<br />
+<p></p>
+<input type="button" value="给一个控件绑定多个 事件" id="btnM"/><br />
+
+<script>
+	
+	 document.getElementById("btn").onclick = function () {
+     alert('btn click1');
+    };
+    document.getElementById("btn").onclick = function () {
+        console.log("第二");
+             alert('btn click2');
+    }
+
+//. 对象.addEventListener("没有on的事件名字",事件处理函数,false);
+//解释：第三个参数在本篇文章的事件阶段中有解释
+//优点：可以绑定多个事件
+//缺点：谷歌和火狐支持,IE8不支持
+document.getElementById("btn1").addEventListener("click", function () {
+        console.log("第一");
+           alert('btn click1111');
+    }, false);
+    document.getElementById("btn1").addEventListener("click", function () {
+        console.log("第二");
+           alert('btn click 2222');
+    }, false);
+
+//3. 对象.attachEvent("有on的事件名字",事件处理函数);
+//优点：可以绑定多个事件
+//缺点：谷歌和火狐不支持，IE8支持
+//document.getElementById("btn2").attachEvent("onclik", function () {
+//      console.log("第一");
+//       alert('btn click 2222333');
+//  });
+//  document.getElementById("btn2").attachEvent("click", function () {
+//       alert('btn click 22223334356546');
+//  }, false);
+    
+//  1.方法名不一样
+//2.参数个数不一样addEventListener三个参数
+//   attachEvent两个参数
+//3.addEventListener 谷歌,火狐,IE11支持,IE8不支持
+//   ttachEvent 谷歌火狐不支持,IE11不支持,IE8支持
+//4.this不同,addEventListener 中的this是当前绑定事件的对象
+//   attachEvent中的this是window
+//5.addEventListener中事件的类型(事件的名字)没有on
+//   attachEvent中的事件的类型(事件的名字)有on
+
+
+//测试
+    addEventListener(document.getElementById("btn3"), "click", function () {
+        console.log("11111");
+        alert('1111111');
+    });
+    addEventListener(document.getElementById("btn3"), "click", function () {
+        console.log("222222");
+               alert('22222222');
+    });
+    addEventListener(document.getElementById("btn3"), "click", function () {
+        console.log("333333");
+            alert('33333333');
+    });
+
+
+//为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数
+    function addEventListener(element, type, fn) {
+        //判断浏览器是否支持这个方法
+        if (element.addEventListener) {
+            element.addEventListener(type, fn, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, fn);
+        } else {
+            element["on" + type] = fn;
+        }
+    };
+
+
+	
+//	document.getElementById("dv1").onclick = function () {
+//      console.log(this.id);
+//        alert('div1');
+//  };
+//  document.getElementById("dv2").onclick = function () {
+//      console.log(this.id);
+//        alert('div2');
+//  };
+//  document.getElementById("dv3").onclick = function () {
+//      console.log(this.id);
+//        alert('div3');
+//  };
+    
+//  3.阻止事件冒泡  window.event.cancelBubble=true;
+
+
+    document.getElementById("dv1").onclick = function () {
+        console.log(this.id);
+           alert('div1');
+            
+    };
+    document.getElementById("dv2").onclick = function () {
+        console.log(this.id);
+        alert('div2');
+        //阻止事件冒泡
+        // IE特有的,谷歌支持,火狐不支持
+        window.event.cancelBubble=true;
+    };
+    document.getElementById("dv3").onclick = function () {
+        console.log(this.id);
+          alert('div3');
+    };
+
+//4.阻止事件冒泡  e.stopPropagation();   //谷歌和火狐支持
+
+document.getElementById("dv1").onclick = function () {
+        console.log(this.id);
+    };
+    document.getElementById("dv2").onclick = function (e) {
+        console.log(this.id);
+        //阻止事件冒泡
+        //谷歌和火狐支持
+        e.stopPropagation();
+    };
+    document.getElementById("dv3").onclick = function () {
+        console.log(this.id);
+    };
+
+
+//为同一个元素绑定多个不同的事件,指向相同的事件处理函数
+    document.getElementById("btnM").onclick = f1;
+    document.getElementById("btnM").onmouseover = f1;
+    document.getElementById("btnM").onmouseout = f1;
+ 
+    function f1(e) {
+        switch (e.type) {
+            case "click":
+                alert("好帅哦");
+                break;
+            case "mouseover":
+                this.style.backgroundColor = "red";
+                break;
+            case "mouseout":
+                this.style.backgroundColor = "green";
+                break;
+        }
+    }
+
+
+//原文：https://blog.csdn.net/tswc_byy/article/details/82824798 
+
+
+</script>
+
+	</body>
+</html>

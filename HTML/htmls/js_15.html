@@ -1,0 +1,103 @@
+
+<html>
+
+<!--<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+ 
+        #box2 {
+            background-color: blue;
+            margin-top: 150px;
+        }
+ 
+        #box3 {
+            background-color: yellowgreen;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始">
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+ 
+<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+<script>
+    $(function () {
+        $("input").eq(0).click(function () {
+ 
+            //第一个参数：对象，里面可以传需要动画的样式
+            //第二个参数：speed 动画的执行时间
+            //第三个参数：动画的执行效果 [swing/linear]
+            //第四个参数：回调函数
+            $("#box1").animate({left: 800}, 8000);  //默认是swing
+ 
+            //swing:秋千 摇摆
+            $("#box2").animate({left: 800}, 8000, "swing");
+ 
+            //linear:线性 匀速
+            $("#box3").animate({left: 800}, 8000, "linear", function () {
+                console.log("hahaha");
+            });
+        })
+    });
+</script>
+
+</body>-->
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示">
+<input type="button" value="隐藏">
+<input type="button" value="切换">
+<div></div>
+<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+<script>
+    $(function () {
+        $("input").eq(0).click(function () {
+            //slideDown：如果不传参数，有一个默认值normal
+            //$("div").slideDown();
+ 
+            //可以传入毫秒数
+            //$("div").slideDown(2000);
+ 
+            //可以添加回调函数
+            $("div").slideDown(2000,function () {
+                console.log("显示完毕");
+            });
+        });
+ 
+        $("input").eq(1).click(function () {
+            $("div").slideUp();
+        });
+ 
+        $("input").eq(2).click(function () {
+            //如果当前是显示状态，就隐藏
+            //如果当前是隐藏状态，就显示
+            $("div").slideToggle();
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="dv">
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <ul id="uu">
+        <li>喜羊羊</li>
+        <li>美羊羊</li>
+        <li id="three">懒羊羊</li>
+        <li>沸羊羊</li>
+        <li>暖羊羊</li>
+    </ul>
+</div>
+
+
+<script>
+	
+	var ulObj = document.getElementById('uu');
+	//父级节点
+    console.log("父级节点");
+    console.log(ulObj.parentNode);
+	
+	//父级元素
+	console.log('父级节点');
+	console.log(ulObj.parentElement);
+	 //子节点
+    console.log("子节点");
+    console.log(ulObj.childNodes);
+    //子元素
+    console.log("子元素");
+    console.log(ulObj.children);
+    
+     console.log("==============================================");
+     
+//第一个子节点
+    console.log("第一个子节点");
+    console.log(ulObj.firstChild);//------------------------IE8中是第一个子元素
+    //第一个子元素
+    console.log("第一个子元素");
+    console.log(ulObj.firstElementChild);//-----------------IE8中不支持
+    //最后一个子节点
+    console.log("最后一个子节点");
+    console.log(ulObj.lastChild);//------------------------IE8中是第一个子元素
+    //最后一个子元素
+    console.log("最后一个子元素");
+    console.log(ulObj.lastElementChild);//-----------------IE8中不支持
+    //某个元素的前一个兄弟节点
+    console.log("某个元素的前一个兄弟节点");
+    console.log(document.getElementById("three").previousSibling);
+    //某个元素的前一个兄弟元素
+    console.log("某个元素的前一个兄弟元素");
+    console.log(document.getElementById("three").previousElementSibling);
+    //某个元素的后一个兄弟节点
+    console.log("某个元素的后一个兄弟节点");
+    console.log(document.getElementById("three").nextSibling);
+    //某个元素的后一个兄弟元素
+    console.log("某个元素的后一个兄弟元素");
+    console.log(document.getElementById("three").nextElementSibling);
+    
+    
+      var nodeS = ulObj.parentNode;
+getFirstElementChild(nodeS );
+getLastElementChild(nodeS );
+
+//	1.获取任意一个父级元素的第一个子级元素
+
+function getFirstElementChild(element) {
+        if (element.firstElementChild) {//true--->支持
+            return element.firstElementChild;
+        } else {
+            var node = element.firstChild;//第一个节点
+            while (node && node.nodeType != 1) {
+                node = node.nextSibling;
+            }
+            console.log(node);
+            return node;
+        }
+    };
+
+//2.获取任意一个父级元素的最后一个子级元素
+function getLastElementChild(element) {
+        if (element.lastElementChild) {//true--->支持
+            return element.lastElementChild;
+        } else {
+            var node = element.lastChild;//第一个节点
+            while (node && node.nodeType != 1) {
+                node = node.previousSibling;
+            }
+              console.log(node);
+            return node;
+        }
+    };
+
+
+	
+</script>
+
+
+	</body>
+</html>

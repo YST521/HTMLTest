@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<div id="header">
+			<div>11111</div>
+			<div>222</div>
+			<div>333</div>
+			<div>444</div>
+			<div>555</div>
+		</div><br />
+		
+		<div id="content" style="width: 200px; height: 200px;">
+			<div id="sonDiv" style="width: 80px; height: 80px; ">666666</div>
+		</div><br />
+		
+		
+		<head id="head11">
+			<div>1212</div>
+			<div>2323</div>
+			<div>3434</div>
+		  </head><br />
+		
+		<div>
+			
+			<div>KKKKKKKK1111111111</div>
+			<div id="kkk">KKKKKKKK222222222</div>
+			<div>KKKKKKKK333333</div>
+			
+		</div><br />
+		
+		
+		
+				<div id="content1">
+			<ul>
+				<li>AAAA</li>
+				<li>BBBB</li>
+				<li>CCCC</li>
+			</ul>
+			
+		      </div>
+		
+		
+
+			<div id="foot">
+			<div>aaa</div>
+			<div>bbb</div>
+			<div>ccc</div>
+		      </div>
+		
+		
+	</body>
+	
+	<script>
+		
+		
+		//通过父节点获取子节点
+   var headDiv = document.getElementById('header');
+		headDiv.style.backgroundColor = 'red';
+	
+//获取取 header的 第一个元素
+//var  hf = document.getElementById("header").firstElementChild;
+var hf = document.getElementById('header').children[0];
+
+//		var hf = headDiv.children[0];
+		hf.style.backgroundColor = 'blue';
+
+//获取最后一个元素
+//var getFirstChild = document.getElementById("header").lastElementChild;
+    var 	getFirstChild= headDiv.lastElementChild;
+	getFirstChild.style.backgroundColor = 'greenyellow';
+		
+		
+//根据父节点获取子节点
+//var head1 = document.getElementById('head11');
+//var cc = head1.childNodes;
+//cc.style.color = 'red';
+//		
+		
+		
+		
+		//根据子节点获取父节点 parentElement获取父节点  parentElement和parentNode一样，只是parentElement是ie的标准。
+		var sonDiv = document.getElementById('sonDiv');
+		    sonDiv.style.backgroundColor = 'green';
+		    sonDiv.innerHTML  = '根据子节点获取父节点';
+		var fDiv = sonDiv.parentElement;
+		fDiv.style.backgroundColor = 'red';
+
+		// 通过节点获取上下节点
+		var kkk2 = document.getElementById('kkk');
+		kkk2.style.color ='red';
+	 
+	    var kkk1 = kkk2.previousElementSibling;
+	    kkk1.innerHTML = '通过k2获取k1';
+	    kkk1.style.backgroundColor = 'purple';
+		
+		 var kkk3 = kkk2.nextElementSibling;
+	    kkk3.innerHTML = '通过k2获取k3';
+	    kkk3.style.backgroundColor = 'yellow';
+		
+		
+	</script>
+	
+	
+</html>

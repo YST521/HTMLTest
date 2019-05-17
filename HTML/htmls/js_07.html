@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环获取标签</title>
+		
+	</head>
+	
+	<style>
+        ul {
+            list-style-type: none;
+            cursor: pointer;
+         /*   background-color: chartreuse;*/
+            border: 1px solid red;
+            width:550px;
+            height: 50px;
+            padding-left: -50px;
+          padding-right: 10px;
+        }
+        ul li{
+        	float: left;
+        	width: 100px;
+        	height: 50px;
+        	margin-right: 10px;
+        	text-align: center;
+        	line-height: 50px;
+        
+        }
+        
+        #uu1  {
+            list-style-type: none;
+            cursor: pointer;
+        }
+  #uu1 li{
+  	color:  red;
+  }
+        
+        #uu2 {
+            list-style-type: none;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+	<body>
+		
+		<ul id="uu">
+    <li score="10">喜羊羊的成绩</li>
+    <li score="20">美羊羊的成绩</li>
+    <li score="30">懒羊羊的成绩</li>
+    <li score="40">沸羊羊的成绩</li>
+    <li score="50">暖羊羊的成绩</li>
+</ul>
+
+<br />
+
+<ul id="uu1">
+    <li>喜羊羊的成绩</li>
+    <li>美羊羊的成绩</li>
+    <li>懒羊羊的成绩</li>
+    <li>沸羊羊的成绩</li>
+    <li>暖羊羊的成绩</li>
+</ul>
+<p></p>
+
+
+<input type="button" value="移除自定义属性" id="btn"/>
+<ul id="uu2">
+    <li score="10">喜羊羊的成绩</li>
+    <li score="20">美羊羊的成绩</li>
+    <li score="30">懒羊羊的成绩</li>
+    <li score="40">沸羊羊的成绩</li>
+    <li score="50">暖羊羊的成绩</li>
+</ul>
+
+<script type="text/javascript">
+	
+	//html标签中有没有什么自带的属性可以存储成绩的----没有
+    //本身html标签没有这个属性,自己(程序员)添加的,----自定义属性---为了存储一些数据
+    //在html标签中添加的自定义属性,如果想要获取这个属性的值,需要使用getAttribute("自定义属性的名字")才能获取这个属性的值
+    //获取所有的li标签
+    //循环获取标签
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+        list[i].onclick = function () {
+            //alert(this.score);//不能
+            alert(this.getAttribute("score")); //可以
+        };
+    }
+    
+    
+//  /总结:设置自定义属性:setAttribute("属性的名字","属性的值");
+    //获取自定义属性的值:getAttribute("属性的名字")
+ 
+    //获取所有的li标签,然后为每个标签中动态的添加自定义属性和值
+    //点击的时候获取该标签的自定义属性的值
+ 
+    //根据id获取ul标签,并且或者该标签中所有的li
+    var list = document.getElementById("uu1").getElementsByTagName("li");
+    //循环遍历
+    for (var i = 0; i < list.length; i++) {
+        //先为每个li添加自定义属性
+        //list[i].score=(i+1)*10;//此方式,自定义属性在DOM对象上,不在标签中
+        list[i].setAttribute("score", (i + 1) * 10);
+        //点击每个li标签,显示对应的自定义属性值
+        list[i].onclick = function () {
+           
+       
+//      移除元素的类样式
+// list[i].removeAttribute("score"); 
+//移除元素的值，样式还在
+//list[i].setAttribute("score", "");
+ alert(this.getAttribute("score"));
+        };
+    }
+
+
+ //点击按钮移除元素的自定义属性
+    document.getElementById("btn").onclick = function () {
+
+        //获取所有的li标签
+        var list = document.getElementById('uu2');
+        for (var i = 0; i < list.length; i++) {
+      list[i].removeAttribute("score"); 
+//          list[i].setAttribute("score", 666);
+                 	alert(list[i].getAttribute("score"));
+        }
+    };
+
+	
+</script>
+	</body>
+</html>

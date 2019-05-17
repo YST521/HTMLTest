@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>ajax请求本地json文件</title>
+
+</head>
+<body>
+
+<!--<div id="text"></div>-->
+<!--<img src="../img/bg1.png" />-->
+	<script type="text/javascript" src="../jQueryDownload/jquery-1.11.3.min.js" ></script>
+<script>
+	
+
+	//请求本地的json文件 
+// 方法 1
+
+$.getJSON("../img/test.json", "", function(data) {
+    　  //each循环 使用$.each方法遍历返回的数据date
+       $.each(data.first, function(i, item) {
+            var str = '<div>姓名:' + item.name + '性别：' + item.sex + '</div>';
+//          document.write(str);
+
+//          $('#text').text(str);
+//            $('#text').css('color','red');
+
+//var div = document.createElement('div');
+//div.style.backgroundColor = 'red';
+//document.body .appendChild(div);
+//div.innerHTML = str;
+
+//js创建元素
+//$("<div id='dd'></div>");
+//var div = $("#dd");
+//div.style.backgroundColor = 'red';
+//document.body.append(div);
+ $("body").append(" <b id='#dd'>" + str + "</b>");
+$('div').css('color','red');
+
+       })
+});
+
+
+//方法二
+
+//$.ajax({
+// url: "../img/test.json",//json文件位置
+// type: "GET",//请求方式为get
+// dataType: "json", //返回数据格式为json
+// success: function(data) {//请求成功完成后要执行的方法 
+//     //each循环 使用$.each方法遍历返回的数据date
+//     $.each(data.first, function(i, item) {
+//          var str = '<div>姓名:' + item.name + '性别：' + item.sex + '</div>';
+//          document.write(str);
+//     })
+// }
+//})；
+	
+
+</script>
+
+</body>
+</html>

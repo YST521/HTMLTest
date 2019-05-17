@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>第一个html</title>
+        <base href="http://588ku.com/beijing/" target="_blank" !--base作用相当于网站跳转的根目录-->
+        <link rel="stylesheet" type="text/css" href="mystyle.css" !--link主要是链接样式表(外联)-->
+        <style type="text/css"!--背景白色,段落p标签蓝色>
+        body{background-color: whitesmoke}
+        p{color:palegreen}
+        </style>
+        <meta name="keywords" content="HTML,CSS,XML,XHTML,JavaScript" !-为搜索引擎设置定义关键词->
+        <meta name="description" content="免费 Web & 编程 教程" !-为网页添加描述->
+        <meta name="author" content="zys" !-作者->
+        <meta http-equiv="refresh" content="30" !-每30s刷新当前页面>
+        <style>
+                @charset "utf-8";
+        /* CSS Document */
+        .tabtop13 {
+            margin-top: 13px;
+        }
+        .tabtop13 td{
+            background-color:#ffffff;
+            height:25px;
+            line-height:150%;
+        }
+        .font-center{ text-align:center}
+        .btbg{background:#e9faff !important;}
+        .btbg1{background:#f2fbfe !important;}
+        .btbg2{background:#f3f3f3 !important;}
+        .biaoti{
+            font-family: 微软雅黑;
+            font-size: 26px;
+            font-weight: bold;
+            border-bottom:1px dashed #CCCCCC;
+            color: #255e95;
+        }
+        .titfont {
+            
+            font-family: 微软雅黑;
+            font-size: 16px;
+            font-weight: bold;
+            color: #255e95;
+            background: url(../images/ico3.gif) no-repeat 15px center;
+            background-color:#e9faff;
+        }
+        .tabtxt2 {
+            font-family: 微软雅黑;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+            color:#327cd1;
+        }
+        .tabtxt3 {
+            font-family: 微软雅黑;
+            font-size: 14px;
+            padding-left: 15px;
+            color: #000;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            line-height: 20px;
+        }
+        
+        #test{
+        	width: 100px;
+        	height: 100px;
+        	border: 5px ridge red;
+        }
+        </style>
+    </head>
+<body>
+	<div id="test">666</div><br />
+    <h1>第一个标题</h1>
+    <h2>这是第二个标题</h2>
+    <hr >   <!--这是个下划线-->
+    <p>这是<br !--br换行的-->个段落.</p>
+    <a href="http://www.baidu.com" target="_blank" !--这个作用是在新窗口打开链接>这是一个连接</a>
+    <b>我的作用是加粗文本</b><br><br>
+    <i>我的作用是斜体</i>
+    <img src="https://tse3-mm.cn.bing.net/th?id=OIP.2laEKraJNX8YErk-A1bgoQHaEK&w=300&h=168&c=7&o=5&pid=1.7" 
+   alt="这是图片描述" width="258" height="39">
+    <!-- <img src="C:\Users\admin\Pictures\1.png" width="258" height="28" >  -->
+    <a id="tips">这是有用的提示部分</a><br>
+    <a href="#tips">访问有用的部分</a>
+    <a href="http://www.baidu.com/html/html-links.html#tips">访问有用部分的另一种写法</a>
+    <!-- font-family:字体 font-size:字体大小 color:颜色 -->
+    <h1 style="font-family:Verdana,">一个标题</h1>
+    <p style="font-family:Arial;color:red;font-size: 20px">这是一个段落</p>
+    <h1 style="text-align:center">居中对齐的标题</h1>
+    <!-- 各种表格 -->
+    <h4>这个没边框的表格</h4>
+    <table>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+    </table>
+    <!-- 表格中的表头 -->
+    <h4>水平标题:</h4>
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <th>telephone</th>
+            <th>adress</th>
+            <!-- th将表内的内容颜色加深,而td并不会 -->
+        </tr>
+        <tr>
+            <td>test</td>
+            <td>123456789</td>
+            <td>武汉</td>
+        </tr>
+    </table>
+
+    <h4>这个是垂直标题</h4>
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <td>test</td>
+        </tr>
+        <tr>
+            <th>telephone</th>
+            <td>123456789</td>
+        </tr>
+    </table>
+    <!-- 带标题的表格 -->
+    <br>
+    <br>
+    <br>
+    <table border="1">
+        <caption>Monthly savings</caption>
+        <tr>
+            <th>Month</th>
+            <th>savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>$50</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <!-- 跨行或跨列的表格单元格 -->
+    <h4>单元格跨两格:</h4>
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <th colspan="2" !-一个单元格名包含两格->Telephone</th>
+        </tr>
+        <tr>
+            <td>zys</td>
+            <td>77 584</td>
+            <td>77 585</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h4>单元格跨两列:</h4>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <td>zys</td>
+        </tr>
+        <tr>
+            <th rowspan="2" !-竖排一个包含两格单元格>Telephone</th>
+            <td>555 666 777</td>
+        </tr>
+        <tr>
+            <td>555 666 778</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <!-- 单元格内的标签 -->
+    <table border="1">
+        <tr>
+            <td>
+                <p>这是一个段落</p>
+                <p>这是另一个段落</p>
+            </td>
+            <td>这个单元格包含一个表格:
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>这个单元格包含一个列表
+                <ul>
+                    <li>apples</li>
+                    <li>bananas</li>
+                    <li>pineapples</li>
+                </ul>
+            </td>
+            <td>Hello</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <!-- 漂亮的表格 -->
+    <table width = "100%" border= "0" cellspacing ="0" align = "center">
+        <tr>
+            <td align = "center" class="biaoti" height = "60" >受理员业务统计表</td>
+        </tr>
+        <tr>
+            <td align = "right" height = "25">2017-01-02 --- 2017-05-02</td>
+        </tr>
+    </table>
+    <table width = "100%" border="0" cellspacing = "1" cellpadding = "4" bgcolor = "#cccccc" class="tabtop13" align = "center">
+        <tr>
+            <td colspan="2" class="btbg font-center titfont" rowspan="2">受理员</td>
+            <td width="10%" class="btbg font-center tiffont" rowspan="2">受理数</td>
+            <td width="10%" class="btbg font-center tiffont" rowspan="2">自办数</td>
+            <td width="10%" class="btbg font-center tiffont" rowspan="2">直接解答</td>
+            <td colspan="2" class="btbg font-center titfont" rowspan="2">拟办意见</td>
+            <td colspan="2" class="btbg font-center titfont" rowspan="2">返回修改</td>
+            <td colspan="2" class="btbg font-center titfont" rowspan="2">工单类型</td>
+        </tr>
+        <tr>
+            <td width="8%" class="btbg font-center">同意</td>
+            <td width="8%" class="btbg font-center">比例</td>
+            <td width="8%" class="btbg font-center">数量</td>
+            <td width="8%" class="btbg font-center">比例</td>
+            <td width="8%" class="btbg font-center">建议数</td>
+            <td width="8%" class="btbg font-center">诉求件</td>
+            <td width="8%" class="btbg font-center">咨询件</td>
+        </tr>
+        <tr>
+            <td width="7%" rowspan="8" class="btbg font-center">受理处</td>
+            <td width="7%" class="btbg2">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+            </tr>
+        <tr>
+            <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        </tr>
+
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+        </tr>
+        <tr>
+            <td width="7%" rowspan="8" class="btbg1 font-center">话务组</td>
+            <td width="7%"  class="btbg2">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">总计</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+        </tr>
+    </table>
+
+<br>
+<br>
+<br>
+<!-- 文本输入框 -->
+<form action="">
+    First name:=<input type="text" name="firstname"><br>
+    Last  name:=<input type="text" name="Last name"> 
+</form>
+<br>
+<br>
+<br>
+
+<!-- 账号密码输入提交 -->
+<form  name="input" action="html_form_action.php" method="get">
+    username:<input type="text" name="username"><br>
+    Password:<input type="password" name="password"><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<br>
+<!-- 单选框 --input type="radio" -->
+<form action="">
+    <input type="radio" name="sex" value="male">Male<br>
+    <input type="radio" name="sex" value="female">Female
+</form>
+
+ <!-- 复选框 --input type="checkbox" -->
+ <form action="">
+    <input type="checkbox"name="vehice" value="Bike"> I have a bike<br>
+    <input type="checkbox"name="vehice" value="Car">I have a car
+</form>
+<br>
+<br>
+<br>
+<!-- HIML框架 -->
+<iframe src="demo_iframe.htm" width="200" height="200"></iframe>
+<p>一些旧浏览器不支持</p>
+<p>如果浏览器不支持iframe则不会显示.</p>   
+<br>
+<br>
+<br> 
+
+<!-- 使用iframe来显示目标来显示连接页面 -->
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="http://www.baidu.com" target="iframe_a">百度一下</a></p>
+<p><b>注意:</b>因为a标签的taget属性是iframe_a的iframe框架,所以在点击链接时页面会显示在iframe框架中.</p>
+
+
+<!-- html总结 -->
+<a href="http://www.runoob.com/html/html-summary.html">HTMl总结</a>
+
+</body>
+</html>

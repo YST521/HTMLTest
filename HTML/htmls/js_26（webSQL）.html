@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="showContent">111</div><br />
+		<div id="status"></div><br />
+		
+		<script type="text/javascript">
+			var show = document.getElementById('showContent');
+//openDatabase() 方法对应的五个参数说明：
+//数据库名称
+//版本号
+//描述文本
+//数据库大小
+//创建回调
+
+//			var db = openDatabase('mydb','1.0','Test DB',2*1024*1024);
+			
+//	执行查询操作
+//上面的语句执行后会在 'mydb' 数据库中创建一个名为 LOGS 的表。
+//			db.transaction(function (tx) {  
+// tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+// tx.executeSql('create table id not exixts logs (id unique,log)');
+//});
+
+//插入数据 在执行上面的创建表语句后，我们可以插入一些数据：
+	var db = openDatabase('mydb','1.0','Test DB',2*1024*1024);
+db.transaction(function (tx) {
+   tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+   tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "我是第一条数据")');
+   tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "我是第二条数据")');
+});
+
+//读取数据
+db.transaction(function(tx){
+	
+	 tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+	 	
+//	 	results.rows.item(0).log  获取第一条数据
+	 	alert(results.rows.item(0).log );
+	 	show.innerHTML =  results.rows.item(0).log ;
+	 	
+	 },null);
+	
+});
+
+//删除记录
+//根据id 删除数据
+db.transaction(function (tx) {
+    tx.executeSql('DELETE FROM LOGS  WHERE id=1');
+});
+
+//删除指定的数据id也可以是动态的：
+//db.transaction(function(tx) {
+//  tx.executeSql('DELETE FROM LOGS WHERE id=?', [id]);
+//});
+
+//s
+
+//更新记录 修改数据
+db.transaction(function (tx) {
+    tx.executeSql('UPDATE LOGS SET log=\'www.w3cschool.cc\' WHERE id=2');
+});
+//更新指定的数据id也可以是动态的：
+//db.transaction(function(tx) {
+//  tx.executeSql('UPDATE LOGS SET log=\'www.w3cschool.cc\' WHERE id=?', [id]);
+//});
+//		
+
+
+//完整demo
+var zdb = openDatabase('zdb', '1.0', 'Test DB', 2 * 1024 * 1024);
+var msg;
+ 
+ zdb.transaction(function (tx) {
+    tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+    tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "张三")');
+    tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "666")');
+    msg = '<p>数据表已创建，且插入了两条数据。</p>';
+    document.querySelector('#status').innerHTML =  msg;
+ });
+ 
+ zdb.transaction(function (tx) {
+      tx.executeSql('DELETE FROM LOGS  WHERE id=1');
+      msg = '<p>删除 id 为 1 的记录。</p>';
+      document.querySelector('#status').innerHTML =  msg;
+ });
+ 
+ zdb.transaction(function (tx) {
+     tx.executeSql('UPDATE LOGS SET log=\'runoob.com\' WHERE id=2');
+      msg = '<p>更新 id 为 2 的记录。</p>';
+      document.querySelector('#status').innerHTML =  msg;
+ });
+ 
+ zdb.transaction(function (tx) {
+    tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+       var len = results.rows.length, i;
+       msg = "<p>查询记录条数: " + len + "</p>";
+       document.querySelector('#status').innerHTML +=  msg;
+       
+       for (i = 0; i < len; i++){
+          msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+          document.querySelector('#status').innerHTML +=  msg;
+       }
+    }, null);
+ });
+		</script>
+		
+	</body>
+</html>
