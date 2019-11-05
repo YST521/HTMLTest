@@ -1,0 +1,165 @@
+
+/*
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{
+    padding: 0px;
+    margin: 0px;
+}
+
+ui{
+	outline-style:none ;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+
+
+#tab{
+	background-color:  red;
+	display:inline-block;
+	width: 500px;
+	height: 100px;
+	border: 1px solid #ddd ;
+}
+
+#tab #head{
+position: relative;
+}
+
+#tab #head ul{
+	position: absolute;
+}
+
+#tab #head ul li{
+	width: 98px;
+	height: 40px;
+	list-style: none;
+	text-align: center;
+	float: left;
+	 list-style: none;
+	
+}
+
+#tab #head ul li.select{
+	background-color:white;
+	border-bottom: 0px;
+	border-left: 1px solid#ddd;
+	border-right: 1px solid#ddd;
+	padding: 0px;
+	color: red;
+	
+}
+	
+#tab #head ul li:hover{
+
+	
+	cursor: pointer;
+	}
+	
+
+
+	
+	#tab #context .dom{
+		display: none;
+		
+	}
+	
+	#tab #context .dom ul li{
+			float:  left;
+			list-style: none;
+			background-color: greenyellow;
+		    width: 240px;
+		    
+	}
+	
+*/
+
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+ul{
+	outline-style: none;
+}
+
+a{
+ 	text-decoration: none;
+ 	color: black;
+ }
+ 
+
+#tab{
+	width: 500px;
+	height: 100px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	margin-left: 50px;
+	margin-top: 50px;
+}
+
+#tab #head{
+	height: 40px;
+	background: #f7f7f7;
+	position: relative;
+}
+
+#tab #head ul{
+	width: 500px;
+	position: absolute;
+ 	left: -1px;
+ 	
+}
+
+#tab #head ul li{
+ float: left;
+/* background: red;*/
+ width: 98px;
+ height: 36px;
+ line-height: 36px;
+ text-align: center;
+ border-bottom: 1px solid #ddd;
+ padding: 0px 1px;
+ list-style: none;
+ 
+}
+#tab #head ul li.select{
+	background-color:white;
+	border-bottom: 0px;
+	border-left: 1px solid#ddd;
+	border-right: 1px solid#ddd;
+	padding: 0px;
+	color: red;
+	
+}
+	
+#tab #head ul li:hover{
+	/*background: red;*/
+	
+	cursor: pointer;
+	}
+	
+	/*内容*/
+
+	
+	#tab #context .dom{
+		display: none;
+		
+	}
+	
+	#tab #context .dom ul li{
+			float:  left;
+			list-style: none;
+			background-color: greenyellow;
+		    width: 240px;
+		    
+		    /*margin-left: 4px;
+		    margin-top: 4px;
+		    line-height: 25px;
+		    text-align: center;*/
+	}
+	
