@@ -1,10 +1,30 @@
-<strong><!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-            <title>标题</title>
-    </head>
-    <a style="text-align:center" href="itms-services:///?action=download-manifest&url=https://github.com/YST521/downOS/blob/master/manifest.plist">OUSI下载1</a>
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <title>ios-download</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<script type="text/javascript">
+function doLocation(url)
+{
+  var a = document.createElement("a");
+  a.style.backgroundColor = RGBColor.red
+  if(!a.click) {
+    window.location = url;
+    return;
+  }
+  a.setAttribute("href", url);
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+}
+</script><strong></strong>
+  </head>
+  <body> 
+  <div>ousi下载<strong></strong></div>
+<script type="text/javascript">
+doLocation('itms-services:///?action=download-manifest&url=https://github.com/YST521/downOS/blob/master/manifest.plist');
+</script>
+  </body>
 </html>
-
-<strong><strong></strong></strong></strong>
